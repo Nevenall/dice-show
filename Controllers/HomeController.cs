@@ -3,7 +3,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace CoreApp.Controllers {
+namespace DiceStream.Controllers {
 
     public class HomeController : Controller {
 

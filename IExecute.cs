@@ -1,4 +1,6 @@
-﻿namespace CoreApp.Hubs {
-    public interface IExecute {
+﻿namespace DiceStream {
+    public interface IExecute
+    {
+        IResult Execute(IStatement statement);
     }
 }
