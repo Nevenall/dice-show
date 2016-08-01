@@ -1,4 +1,3 @@
-
 using System;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -8,12 +7,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-
 namespace DiceStream {
 
     public class Startup {
 
- public IServiceProvider ConfigureServices(IServiceCollection services) {
+       public IServiceProvider ConfigureServices(IServiceCollection services) {
             
 
             services.AddSignalR(options => {
@@ -33,7 +31,8 @@ namespace DiceStream {
 
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory) {
-            if(env.IsDevelopment()) {
+
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
                 // use a user friendly exception page.

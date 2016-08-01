@@ -6,17 +6,19 @@
     "preserveCompilationContext": true
   },
   "dependencies": {
-    "Microsoft.AspNetCore.Mvc": "1.0.0-*",
-    "Microsoft.AspNetCore.Diagnostics": "1.0.0-*",
-    "Microsoft.AspNetCore.Owin": "1.0.0",
-    "Microsoft.AspNetCore.SignalR.Server": "0.0.1-*",
-    "Microsoft.AspNetCore.StaticFiles": "1.0.0-*",
-    "Microsoft.AspNetCore.WebSockets.Server": "0.1.0-*",
-    "Microsoft.Extensions.Logging.Console": "1.0.0-*",
-    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
     "Autofac": "4.0.0-*",
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-    "Autofac.Extensions.DependencyInjection": "4.0.0-*"
+    "Autofac.Extensions.DependencyInjection": "4.0.0-*",
+    "Microsoft.AspNet.SignalR.JS": "2.2.1",
+    "Microsoft.AspNet.WebSockets.Server": "1.0.0-rc1-final",
+    "Microsoft.AspNetCore.Diagnostics": "1.1.0-alpha1-21752",
+    "Microsoft.AspNetCore.Mvc": "1.1.0-alpha1-21752",
+    "Microsoft.AspNetCore.Owin": "1.1.0-alpha1-21752",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.1.0-alpha1-21752",
+    "Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1-21752",
+    "Microsoft.AspNetCore.StaticFiles": "1.1.0-alpha1-21752",
+    "Microsoft.AspNetCore.WebSockets.Server": "0.2.0-alpha1-21752",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0-alpha1-21752",
+    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752"
   },
   "frameworks": {
     // "net461": {},
