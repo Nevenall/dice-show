@@ -1,0 +1,25 @@
+{
+  "name": "DiceStream",
+  "homepage": "https://github.com/Nevenall/DiceStream",
+  "authors": [
+    "nevenall <nevenall@hotmail.com>"
+  ],
+  "description": "web app for dice rolling",
+  "main": "project.json",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "latest",
+    "bootstrap": "https://github.com/twbs/bootstrap.git#v4-dev",
+    "jquery": "latest",
+    "signalr": "latest"
+  }
+}

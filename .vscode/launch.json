@@ -10,7 +10,10 @@
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env": {
+                "aspnet_environment": "development"
+            }
         },
         {
             "name": ".NET Core Attach",

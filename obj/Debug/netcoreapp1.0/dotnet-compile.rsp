@@ -1,5 +1,5 @@
---temp-output:C:\Users\Dan\Source\Repos\DiceStream\obj\Debug\netcoreapp1.0\
---out:C:\Users\Dan\Source\Repos\DiceStream\bin\Debug\netcoreapp1.0\DiceStream.dll
+--temp-output:c:\Users\Dan\Source\Repos\DiceStream\obj\Debug\netcoreapp1.0\
+--out:c:\Users\Dan\Source\Repos\DiceStream\bin\Debug\netcoreapp1.0\DiceStream.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -179,8 +179,14 @@
 --reference:C:\Users\Dan\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Dan\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Dan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Dan\Source\Repos\DiceStream\obj\Debug\netcoreapp1.0\DiceStreamdotnet-compile.deps.json",DiceStream.deps.json
-C:\Users\Dan\Source\Repos\DiceStream\Program.cs
-C:\Users\Dan\Source\Repos\DiceStream\Startup.cs
-C:\Users\Dan\Source\Repos\DiceStream\Controllers\HomeController.cs
-C:\Users\Dan\Source\Repos\DiceStream\Hubs\MyHub.cs
+--resource:"c:\Users\Dan\Source\Repos\DiceStream\obj\Debug\netcoreapp1.0\DiceStreamdotnet-compile.deps.json",DiceStream.deps.json
+c:\Users\Dan\Source\Repos\DiceStream\IDeterminer.cs
+c:\Users\Dan\Source\Repos\DiceStream\IExecute.cs
+c:\Users\Dan\Source\Repos\DiceStream\IParsed.cs
+c:\Users\Dan\Source\Repos\DiceStream\IParser.cs
+c:\Users\Dan\Source\Repos\DiceStream\IResult.cs
+c:\Users\Dan\Source\Repos\DiceStream\IStatement.cs
+c:\Users\Dan\Source\Repos\DiceStream\Program.cs
+c:\Users\Dan\Source\Repos\DiceStream\Startup.cs
+c:\Users\Dan\Source\Repos\DiceStream\Controllers\HomeController.cs
+c:\Users\Dan\Source\Repos\DiceStream\Hubs\DiceHub.cs

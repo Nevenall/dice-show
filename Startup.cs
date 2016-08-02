@@ -20,12 +20,14 @@ namespace DiceStream {
 
             services.AddMvc();
             
-            var containerBuilder = new ContainerBuilder();
+            var cb = new ContainerBuilder();
 
             /// configure custom services.     
+            // cb.RegisterType<IParser, Default
+            
 
-            containerBuilder.Populate(services);
-            var container = containerBuilder.Build();
+            cb.Populate(services);
+            var container = cb.Build();
             return container.Resolve<IServiceProvider>();
         } 
 
