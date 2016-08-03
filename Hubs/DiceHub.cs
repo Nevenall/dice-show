@@ -48,7 +48,7 @@ namespace DiceStream.Hubs {
             // we could throw an exception if the parsing fails. then the errror state comes in througth the fail state of the js promise. I could see either of those being good. 
                return null; /// return ok;
            } else {
-                return null; // actually return the error object
+                return parsed.Error; // actually return the error object
            }
            
 
