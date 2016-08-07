@@ -18,7 +18,8 @@
     "Microsoft.AspNetCore.StaticFiles": "1.1.0-alpha1-21752",
     "Microsoft.AspNetCore.WebSockets.Server": "0.2.0-alpha1-21752",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0-alpha1-21752",
-    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752"
+    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752",
+    "Antlr4": "4.5.3.1-beta001"
   },
   "frameworks": {
     // "net461": {},

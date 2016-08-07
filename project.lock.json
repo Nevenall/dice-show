@@ -3,6 +3,28 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "Antlr4/4.5.3.1-beta001": {
+        "type": "package",
+        "dependencies": {
+          "Antlr4.CodeGenerator": "4.5.3.1-beta001",
+          "Antlr4.Runtime": "4.5.3.1-beta001"
+        }
+      },
+      "Antlr4.CodeGenerator/4.5.3.1-beta001": {
+        "type": "package"
+      },
+      "Antlr4.Runtime/4.5.3.1-beta001": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Antlr4.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Antlr4.Runtime.dll": {}
+        }
+      },
       "Autofac/4.0.0-rc3-316": {
         "type": "package",
         "dependencies": {
@@ -3571,6 +3593,75 @@
     }
   },
   "libraries": {
+    "Antlr4/4.5.3.1-beta001": {
+      "sha512": "f6+7muuaBWfYiEeonHzHuSW1REB8lz6Y3YZHhjuCoqd3Z1+qSRYzWNMFESLoTgXQSNOzPbJJNPNWOW2eje3Y7Q==",
+      "type": "package",
+      "path": "Antlr4/4.5.3.1-beta001",
+      "files": [
+        "Antlr4.4.5.3.1-beta001.nupkg.sha512",
+        "Antlr4.nuspec",
+        "tools/LICENSE.txt"
+      ]
+    },
+    "Antlr4.CodeGenerator/4.5.3.1-beta001": {
+      "sha512": "jurb1Afup62+gabzHSZscn3E+KZfucjb0d3txNNFnUKS5MgcHJoDCMQ6z1cMTbODg/QxBOmgMP3kGr5kFk87Pg==",
+      "type": "package",
+      "path": "Antlr4.CodeGenerator/4.5.3.1-beta001",
+      "files": [
+        "Antlr4.CodeGenerator.4.5.3.1-beta001.nupkg.sha512",
+        "Antlr4.CodeGenerator.nuspec",
+        "build/Antlr4.CodeGenerator.props",
+        "build/Antlr4.CodeGenerator.targets",
+        "build/Antlr4BuildTasks.net40.dll",
+        "tools/IKVM.AWT.WinForms.dll",
+        "tools/IKVM.OpenJDK.Beans.dll",
+        "tools/IKVM.OpenJDK.Charsets.dll",
+        "tools/IKVM.OpenJDK.Corba.dll",
+        "tools/IKVM.OpenJDK.Core.dll",
+        "tools/IKVM.OpenJDK.Management.dll",
+        "tools/IKVM.OpenJDK.Media.dll",
+        "tools/IKVM.OpenJDK.Misc.dll",
+        "tools/IKVM.OpenJDK.Naming.dll",
+        "tools/IKVM.OpenJDK.Remoting.dll",
+        "tools/IKVM.OpenJDK.Security.dll",
+        "tools/IKVM.OpenJDK.SwingAWT.dll",
+        "tools/IKVM.OpenJDK.Text.dll",
+        "tools/IKVM.OpenJDK.Util.dll",
+        "tools/IKVM.OpenJDK.XML.API.dll",
+        "tools/IKVM.Runtime.JNI.dll",
+        "tools/IKVM.Runtime.dll",
+        "tools/antlr4-csharp-4.5.3.1-SNAPSHOT-complete.jar",
+        "tools/ikvm.exe",
+        "tools/ikvm.exe.config"
+      ]
+    },
+    "Antlr4.Runtime/4.5.3.1-beta001": {
+      "sha512": "Ttj8oM9hQNetioLayZG+mikmZvq44WwMEwKISHgVHXX3Uzl9Sd46Alzw2fVuBT+VWpxjfk3QwEgqBuvrp4xpPw==",
+      "type": "package",
+      "path": "Antlr4.Runtime/4.5.3.1-beta001",
+      "files": [
+        "Antlr4.Runtime.4.5.3.1-beta001.nupkg.sha512",
+        "Antlr4.Runtime.nuspec",
+        "lib/net20/Antlr4.Runtime.dll",
+        "lib/net20/Antlr4.Runtime.xml",
+        "lib/net30/Antlr4.Runtime.dll",
+        "lib/net30/Antlr4.Runtime.xml",
+        "lib/net35-cf/Antlr4.Runtime.dll",
+        "lib/net35-cf/Antlr4.Runtime.xml",
+        "lib/net35-client/Antlr4.Runtime.dll",
+        "lib/net35-client/Antlr4.Runtime.xml",
+        "lib/net40-client/Antlr4.Runtime.dll",
+        "lib/net40-client/Antlr4.Runtime.xml",
+        "lib/net45/Antlr4.Runtime.dll",
+        "lib/net45/Antlr4.Runtime.xml",
+        "lib/netcore45/Antlr4.Runtime.dll",
+        "lib/netcore45/Antlr4.Runtime.xml",
+        "lib/netstandard1.1/Antlr4.Runtime.dll",
+        "lib/netstandard1.1/Antlr4.Runtime.xml",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr4.Runtime.dll",
+        "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr4.Runtime.xml"
+      ]
+    },
     "Autofac/4.0.0-rc3-316": {
       "sha512": "Fx4lqVHUVHLU/F+JiZSFarRz1+9KuS452JkKWwWSPBGxtxlitqxFmxuXPFlOyj/SfLO2lDNhPVyOCyyCwNdfnA==",
       "type": "package",
@@ -9500,6 +9591,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Antlr4 >= 4.5.3.1-beta001",
       "Autofac >= 4.0.0-*",
       "Autofac.Extensions.DependencyInjection >= 4.0.0-*",
       "Microsoft.AspNet.SignalR.JS >= 2.2.1",
