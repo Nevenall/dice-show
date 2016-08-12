@@ -2,21 +2,49 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": "Launch Website",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceStream.dll",
-            "args": [],
+            "args": ["web"],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
             "stopAtEntry": false,
+            "launchBrowser": {
+                "enabled": true,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                },
+                "osx": {
+                    "command": "open"
+                },
+                "linux": {
+                    "command": "xdg-open"
+                }
+            },
             "env": {
                 "aspnet_environment": "development"
             }
         },
         {
-            "name": ".NET Core Attach",
+            "name" : "Launch Parser",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceStream.dll",
+            "args": ["parser"],
+            "cwd": "${workspaceRoot}",
+            "externalConsole": true,
+            "stopAtEntry": false,
+            "env": {
+                
+            }
+        },
+        {
+            "name": "Attach",
             "type": "coreclr",
             "request": "attach",
             "processId": "${command.pickProcess}"

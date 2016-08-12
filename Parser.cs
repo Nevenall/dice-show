@@ -10,7 +10,7 @@ namespace DiceStream {
 				// make a state machine parser
 				
 				// 
-
+return null;
 
 /// first find :, that's the 
 
