@@ -1,4 +1,4 @@
-namespace DiceStream {
+namespace DiceShow {
 	public interface IStatement {
 
 		

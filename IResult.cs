@@ -1,4 +1,4 @@
-namespace DiceSteam
+namespace DiceShow
 {
     public interface IResult
     {

@@ -1,4 +1,4 @@
-﻿namespace DiceStream {
+﻿namespace DiceShow {
 
     /// <summary>
     /// Parse a dice request in an executable statement

@@ -1,6 +1,6 @@
 using System;
 
-namespace DiceStream {
+namespace DiceShow {
 
     public class Parser : IParser {
         public IParsed Parse(string rawStatement) {

@@ -2,7 +2,7 @@
 
 using Microsoft.AspNetCore.SignalR;
 
-namespace DiceStream.Hubs {
+namespace DiceShow.Hubs {
 
     public class DiceHub : Hub {
 

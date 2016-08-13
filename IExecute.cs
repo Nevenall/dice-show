@@ -1,6 +1,6 @@
-﻿using DiceSteam;
+﻿using DiceShow;
 
-namespace DiceStream {
+namespace DiceShow {
     public interface IExecute {
         IResult Execute(IStatement statement);
     }
