@@ -25,16 +25,24 @@ namespace DiceShow {
                         Console.WriteLine("enter a dice statement or 'quit' to exit");
                     } else if (rawInput.ToLower() == "quit") {
                         break;
-                    } else  {
-                        // to start with we echo your input
-                        Console.WriteLine(rawInput);
-                        
-                        AntlrInputStream input = new AntlrInputStream(rawInput);
-                        DiceLexer lexer = new DiceLexer(input);
-                        CommonTokenStream tokens = new CommonTokenStream(lexer);
-                        DiceParser parser = new DiceParser(tokens);
+                    } else {
+                        try {
 
+                            AntlrInputStream input = new AntlrInputStream(rawInput);
+                            DiceLexer lexer = new DiceLexer(input);
+                            CommonTokenStream tokens = new CommonTokenStream(lexer);
+                            DiceParser parser = new DiceParser(tokens);
+                            var t = parser.statement();
 
+                            var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
+                            var listener = new DiceBaseListener();
+                            walker.Walk(listener, t);
+
+                        } catch(Exception ex) {
+                            Console.ForegroundColor  = ConsoleColor.Red;
+                            Console.WriteLine(ex.ToString());
+                            Console.ResetColor();
+                        }
 
                         // DiceParser.CompilationUnitContext tree = parser.compilationUnit(); // parse a compilationUnit
 

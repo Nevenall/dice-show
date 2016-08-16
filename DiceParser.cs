@@ -30,18 +30,18 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceParser : Parser {
 	public const int
-		T__0=1, LABEL=2, NUMBER=3, SIDES=4, DEE=5, EHPH=6;
+		LABEL=1, SEMICOLON=2, NUMBER=3, SIDES=4, DEE=5, EHPH=6;
 	public const int
-		RULE_root = 0, RULE_dice = 1, RULE_die = 2;
+		RULE_statement = 0, RULE_dice = 1, RULE_die = 2;
 	public static readonly string[] ruleNames = {
-		"root", "dice", "die"
+		"statement", "dice", "die"
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "':'"
+		null, null, "':'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, "LABEL", "NUMBER", "SIDES", "DEE", "EHPH"
+		null, "LABEL", "SEMICOLON", "NUMBER", "SIDES", "DEE", "EHPH"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -93,32 +93,36 @@ public partial class DiceParser : Parser {
 	{
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
-	public partial class RootContext : ParserRuleContext {
+	public partial class StatementContext : ParserRuleContext {
 		public ITerminalNode LABEL() { return GetToken(DiceParser.LABEL, 0); }
+		public ITerminalNode SEMICOLON() { return GetToken(DiceParser.SEMICOLON, 0); }
 		public DiceContext dice() {
 			return GetRuleContext<DiceContext>(0);
 		}
-		public RootContext(ParserRuleContext parent, int invokingState)
+		public StatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_root; } }
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitRoot(this);
-			else return visitor.VisitChildren(this);
+		public override int RuleIndex { get { return RULE_statement; } }
+		public override void EnterRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.EnterStatement(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.ExitStatement(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public RootContext root() {
-		RootContext _localctx = new RootContext(_ctx, State);
-		EnterRule(_localctx, 0, RULE_root);
+	public StatementContext statement() {
+		StatementContext _localctx = new StatementContext(_ctx, State);
+		EnterRule(_localctx, 0, RULE_statement);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 6; Match(LABEL);
-			State = 7; Match(T__0);
+			State = 7; Match(SEMICOLON);
 			State = 8; dice();
 			}
 		}
@@ -143,10 +147,13 @@ public partial class DiceParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_dice; } }
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDice(this);
-			else return visitor.VisitChildren(this);
+		public override void EnterRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.EnterDice(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.ExitDice(this);
 		}
 	}
 
@@ -183,10 +190,13 @@ public partial class DiceParser : Parser {
 		{
 		}
 		public override int RuleIndex { get { return RULE_die; } }
-		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
-			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
-			if (typedVisitor != null) return typedVisitor.VisitDie(this);
-			else return visitor.VisitChildren(this);
+		public override void EnterRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.EnterDie(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.ExitDie(this);
 		}
 	}
 
@@ -223,8 +233,8 @@ public partial class DiceParser : Parser {
 		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\b\x13\x4\x2\t\x2"+
 		"\x4\x3\t\x3\x4\x4\t\x4\x3\x2\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x4"+
 		"\x3\x4\x3\x4\x3\x4\x2\x2\x2\x5\x2\x2\x4\x2\x6\x2\x2\x3\x3\x2\a\b\xF\x2"+
-		"\b\x3\x2\x2\x2\x4\f\x3\x2\x2\x2\x6\xF\x3\x2\x2\x2\b\t\a\x4\x2\x2\t\n\a"+
-		"\x3\x2\x2\n\v\x5\x4\x3\x2\v\x3\x3\x2\x2\x2\f\r\a\x5\x2\x2\r\xE\x5\x6\x4"+
+		"\b\x3\x2\x2\x2\x4\f\x3\x2\x2\x2\x6\xF\x3\x2\x2\x2\b\t\a\x3\x2\x2\t\n\a"+
+		"\x4\x2\x2\n\v\x5\x4\x3\x2\v\x3\x3\x2\x2\x2\f\r\a\x5\x2\x2\r\xE\x5\x6\x4"+
 		"\x2\xE\x5\x3\x2\x2\x2\xF\x10\t\x2\x2\x2\x10\x11\a\x6\x2\x2\x11\a\x3\x2"+
 		"\x2\x2\x2";
 	public static readonly ATN _ATN =

@@ -31,15 +31,15 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IDiceListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="DiceParser.root"/>.
+	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterRoot([NotNull] DiceParser.RootContext context);
+	void EnterStatement([NotNull] DiceParser.StatementContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="DiceParser.root"/>.
+	/// Exit a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitRoot([NotNull] DiceParser.RootContext context);
+	void ExitStatement([NotNull] DiceParser.StatementContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.dice"/>.

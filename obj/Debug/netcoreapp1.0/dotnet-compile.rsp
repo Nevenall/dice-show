@@ -183,11 +183,9 @@
 --reference:C:\Users\neven\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --resource:"d:\Source\DiceStream\obj\Debug\netcoreapp1.0\DiceStreamdotnet-compile.deps.json",DiceStream.deps.json
 d:\Source\DiceStream\DiceBaseListener.cs
-d:\Source\DiceStream\DiceBaseVisitor.cs
 d:\Source\DiceStream\DiceLexer.cs
 d:\Source\DiceStream\DiceListener.cs
 d:\Source\DiceStream\DiceParser.cs
-d:\Source\DiceStream\DiceVisitor.cs
 d:\Source\DiceStream\IDeterminer.cs
 d:\Source\DiceStream\IExecute.cs
 d:\Source\DiceStream\IParsed.cs
