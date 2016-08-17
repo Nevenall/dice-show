@@ -30,25 +30,28 @@ namespace DiceShow {
 
                             AntlrInputStream input = new AntlrInputStream(rawInput);
                             DiceLexer lexer = new DiceLexer(input);
+                            
                             CommonTokenStream tokens = new CommonTokenStream(lexer);
                             DiceParser parser = new DiceParser(tokens);
+                            
+
+
                             var t = parser.statement();
 
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                            var listener = new DiceBaseListener();
+                            var listener = new MyDiceListener();
                             walker.Walk(listener, t);
+
+                            
+                            if(t.exception != null) {
+                                throw t.exception;
+                            }
 
                         } catch(Exception ex) {
                             Console.ForegroundColor  = ConsoleColor.Red;
                             Console.WriteLine(ex.ToString());
                             Console.ResetColor();
                         }
-
-                        // DiceParser.CompilationUnitContext tree = parser.compilationUnit(); // parse a compilationUnit
-
-                        // MyListener extractor = new MyListener(parser);
-                        // ParseTreeWalker.DEFAULT.walk(extractor, tree); // initiate walk of tree with listener in use of default walker
-
                     }
                 } while(true);
                 
