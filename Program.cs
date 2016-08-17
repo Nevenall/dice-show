@@ -34,18 +34,23 @@ namespace DiceShow {
                             CommonTokenStream tokens = new CommonTokenStream(lexer);
                             DiceParser parser = new DiceParser(tokens);
                             
-
-
                             var t = parser.statement();
-
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                            var listener = new MyDiceListener();
-                            walker.Walk(listener, t);
-
+                            var l = new MyDiceListener();
+                            
+                            walker.Walk(l, t);
+									 
                             
                             if(t.exception != null) {
-                                throw t.exception;
+                            // there was a parsing exception
+									     throw t.exception;
                             }
+
+
+									if(l.Error != null) {
+										/// there was an exception in walking the parse Tree
+										Console.WriteLine("there was a tree walking error");
+									}
 
                         } catch(Exception ex) {
                             Console.ForegroundColor  = ConsoleColor.Red;

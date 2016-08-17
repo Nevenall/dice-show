@@ -36,8 +36,11 @@ public class MyDiceListener : IDiceListener {
         
     }
 
+
+    public IErrorNode Error {get;set;}
+
     public void VisitErrorNode(IErrorNode node) {
-        
+        Error = node;
     }
 
     public void VisitTerminal(ITerminalNode node) {
