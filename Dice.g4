@@ -3,9 +3,8 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-statement: dice;
-dice: (NUMBER die);	 
-die: (DEE|EHPH) SIDES;
+statement: LABEL SEMICOLON dice;
+dice: NUMBER (DEE|EHPH) SIDES;	 
 
 LABEL: [a-zA-Z ,]+;
 SEMICOLON: ':';

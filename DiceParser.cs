@@ -32,9 +32,9 @@ public partial class DiceParser : Parser {
 	public const int
 		LABEL=1, SEMICOLON=2, COMMA=3, NUMBER=4, SIDES=5, DEE=6, EHPH=7;
 	public const int
-		RULE_statement = 0, RULE_dice = 1, RULE_die = 2;
+		RULE_statement = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
-		"statement", "dice", "die"
+		"statement", "dice"
 	};
 
 	private static readonly string[] _LiteralNames = {
@@ -94,6 +94,8 @@ public partial class DiceParser : Parser {
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
 	public partial class StatementContext : ParserRuleContext {
+		public ITerminalNode LABEL() { return GetToken(DiceParser.LABEL, 0); }
+		public ITerminalNode SEMICOLON() { return GetToken(DiceParser.SEMICOLON, 0); }
 		public DiceContext dice() {
 			return GetRuleContext<DiceContext>(0);
 		}
@@ -119,6 +121,8 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
+			State = 4; Match(LABEL);
+			State = 5; Match(SEMICOLON);
 			State = 6; dice();
 			}
 		}
@@ -135,9 +139,9 @@ public partial class DiceParser : Parser {
 
 	public partial class DiceContext : ParserRuleContext {
 		public ITerminalNode NUMBER() { return GetToken(DiceParser.NUMBER, 0); }
-		public DieContext die() {
-			return GetRuleContext<DieContext>(0);
-		}
+		public ITerminalNode SIDES() { return GetToken(DiceParser.SIDES, 0); }
+		public ITerminalNode DEE() { return GetToken(DiceParser.DEE, 0); }
+		public ITerminalNode EHPH() { return GetToken(DiceParser.EHPH, 0); }
 		public DiceContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
@@ -157,61 +161,19 @@ public partial class DiceParser : Parser {
 	public DiceContext dice() {
 		DiceContext _localctx = new DiceContext(_ctx, State);
 		EnterRule(_localctx, 2, RULE_dice);
-		try {
-			EnterOuterAlt(_localctx, 1);
-			{
-			{
-			State = 8; Match(NUMBER);
-			State = 9; die();
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.ReportError(this, re);
-			_errHandler.Recover(this, re);
-		}
-		finally {
-			ExitRule();
-		}
-		return _localctx;
-	}
-
-	public partial class DieContext : ParserRuleContext {
-		public ITerminalNode SIDES() { return GetToken(DiceParser.SIDES, 0); }
-		public ITerminalNode DEE() { return GetToken(DiceParser.DEE, 0); }
-		public ITerminalNode EHPH() { return GetToken(DiceParser.EHPH, 0); }
-		public DieContext(ParserRuleContext parent, int invokingState)
-			: base(parent, invokingState)
-		{
-		}
-		public override int RuleIndex { get { return RULE_die; } }
-		public override void EnterRule(IParseTreeListener listener) {
-			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.EnterDie(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.ExitDie(this);
-		}
-	}
-
-	[RuleVersion(0)]
-	public DieContext die() {
-		DieContext _localctx = new DieContext(_ctx, State);
-		EnterRule(_localctx, 4, RULE_die);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 11;
+			State = 8; Match(NUMBER);
+			State = 9;
 			_la = _input.La(1);
 			if ( !(_la==DEE || _la==EHPH) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				Consume();
 			}
-			State = 12; Match(SIDES);
+			State = 10; Match(SIDES);
 			}
 		}
 		catch (RecognitionException re) {
@@ -226,12 +188,11 @@ public partial class DiceParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\t\x11\x4\x2\t\x2"+
-		"\x4\x3\t\x3\x4\x4\t\x4\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x4\x3\x4\x3\x4"+
-		"\x3\x4\x2\x2\x2\x5\x2\x2\x4\x2\x6\x2\x2\x3\x3\x2\b\t\r\x2\b\x3\x2\x2\x2"+
-		"\x4\n\x3\x2\x2\x2\x6\r\x3\x2\x2\x2\b\t\x5\x4\x3\x2\t\x3\x3\x2\x2\x2\n"+
-		"\v\a\x6\x2\x2\v\f\x5\x6\x4\x2\f\x5\x3\x2\x2\x2\r\xE\t\x2\x2\x2\xE\xF\a"+
-		"\a\x2\x2\xF\a\x3\x2\x2\x2\x2";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\t\xF\x4\x2\t\x2"+
+		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x2\x2"+
+		"\x2\x4\x2\x2\x4\x2\x2\x3\x3\x2\b\t\f\x2\x6\x3\x2\x2\x2\x4\n\x3\x2\x2\x2"+
+		"\x6\a\a\x3\x2\x2\a\b\a\x4\x2\x2\b\t\x5\x4\x3\x2\t\x3\x3\x2\x2\x2\n\v\a"+
+		"\x6\x2\x2\v\f\t\x2\x2\x2\f\r\a\a\x2\x2\r\x5\x3\x2\x2\x2\x2";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

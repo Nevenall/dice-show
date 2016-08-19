@@ -60,19 +60,6 @@ public partial class DiceBaseListener : IDiceListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDice([NotNull] DiceParser.DiceContext context) { }
 
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="DiceParser.die"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDie([NotNull] DiceParser.DieContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="DiceParser.die"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDie([NotNull] DiceParser.DieContext context) { }
-
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>
 	public virtual void EnterEveryRule([NotNull] ParserRuleContext context) { }

@@ -51,15 +51,4 @@ public interface IDiceListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitDice([NotNull] DiceParser.DiceContext context);
-
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="DiceParser.die"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterDie([NotNull] DiceParser.DieContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="DiceParser.die"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitDie([NotNull] DiceParser.DieContext context);
 }
