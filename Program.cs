@@ -36,30 +36,14 @@ namespace DiceShow {
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
                             var listener = new MyDiceListener();
                             
-<<<<<<< HEAD
                             walker.Walk(listener, tree);
-									 
-                            
+									                             
                             if(tree.exception != null) {
-                            // there was a parsing exception
 							    throw tree.exception;
                             }
 
                             if(listener.Error != null) {
-                                /// there was an exception in walking the parse Tree
-                                Console.WriteLine("there was a tree walking error");
-=======
-                            walker.Walk(l, t);
-                            
-                            if(t.exception != null) {
-                            	  // there was a parsing exception
-									     throw t.exception;
-                            }
-
-                            if(l.Error != null) {
-                                /// there was an exception in walking the parse Tree
-                                Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", l.Error.Symbol.Text, l.Error.Symbol.Line, l.Error.Symbol.Column);
->>>>>>> d5f5b6ba317aeeeee05c9296565c4fe33e311a72
+                                Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", listener.Error.Symbol.Text, listener.Error.Symbol.Line, listener.Error.Symbol.Column);
                             }
 
                         } catch(Exception ex) {
