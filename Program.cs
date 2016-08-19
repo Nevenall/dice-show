@@ -27,30 +27,27 @@ namespace DiceShow {
                         break;
                     } else {
                         try {
-
                             AntlrInputStream input = new AntlrInputStream(rawInput);
                             DiceLexer lexer = new DiceLexer(input);
-                            
                             CommonTokenStream tokens = new CommonTokenStream(lexer);
                             DiceParser parser = new DiceParser(tokens);
                             
-                            var t = parser.statement();
+                            var tree = parser.statement();
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                            var l = new MyDiceListener();
+                            var listener = new MyDiceListener();
                             
-                            walker.Walk(l, t);
+                            walker.Walk(listener, tree);
 									 
                             
-                            if(t.exception != null) {
+                            if(tree.exception != null) {
                             // there was a parsing exception
-									     throw t.exception;
+							    throw tree.exception;
                             }
 
-
-									if(l.Error != null) {
-										/// there was an exception in walking the parse Tree
-										Console.WriteLine("there was a tree walking error");
-									}
+                            if(listener.Error != null) {
+                                /// there was an exception in walking the parse Tree
+                                Console.WriteLine("there was a tree walking error");
+                            }
 
                         } catch(Exception ex) {
                             Console.ForegroundColor  = ConsoleColor.Red;
