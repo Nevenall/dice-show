@@ -4,29 +4,30 @@ using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 
 public class MyDiceListener : IDiceListener {
+
+    object Result = new object();
+
+
     public void EnterDice([NotNull] DiceParser.DiceContext context) {
-        
+        // the result is 
+        // roll a NUMBER of dice of size SIDES  
+
+
     }
 
-    public void EnterDie([NotNull] DiceParser.DieContext context) {
-        
-    }
-
+ 
     public void EnterEveryRule(ParserRuleContext ctx) {
 
     }
 
     public void EnterStatement([NotNull] DiceParser.StatementContext context) {
-        
+      // does the context    
     }
 
     public void ExitDice([NotNull] DiceParser.DiceContext context) {
         
     }
 
-    public void ExitDie([NotNull] DiceParser.DieContext context) {
-        
-    }
 
     public void ExitEveryRule(ParserRuleContext ctx) {
         
@@ -46,4 +47,6 @@ public class MyDiceListener : IDiceListener {
     public void VisitTerminal(ITerminalNode node) {
         
     }
+
+ 
 }
