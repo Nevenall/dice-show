@@ -30,7 +30,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceParser : Parser {
 	public const int
-		LABEL=1, SEMICOLON=2, COMMA=3, NUMBER=4, SIDES=5, DEE=6, EHPH=7;
+		LABEL=1, SEMICOLON=2, COMMA=3, NUMBER=4, DEE=5, EHPH=6;
 	public const int
 		RULE_statement = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
@@ -41,7 +41,7 @@ public partial class DiceParser : Parser {
 		null, null, "':'", "','"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, "LABEL", "SEMICOLON", "COMMA", "NUMBER", "SIDES", "DEE", "EHPH"
+		null, "LABEL", "SEMICOLON", "COMMA", "NUMBER", "DEE", "EHPH"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -94,8 +94,6 @@ public partial class DiceParser : Parser {
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
 	public partial class StatementContext : ParserRuleContext {
-		public ITerminalNode LABEL() { return GetToken(DiceParser.LABEL, 0); }
-		public ITerminalNode SEMICOLON() { return GetToken(DiceParser.SEMICOLON, 0); }
 		public DiceContext dice() {
 			return GetRuleContext<DiceContext>(0);
 		}
@@ -121,9 +119,7 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 4; Match(LABEL);
-			State = 5; Match(SEMICOLON);
-			State = 6; dice();
+			State = 4; dice();
 			}
 		}
 		catch (RecognitionException re) {
@@ -138,8 +134,10 @@ public partial class DiceParser : Parser {
 	}
 
 	public partial class DiceContext : ParserRuleContext {
-		public ITerminalNode NUMBER() { return GetToken(DiceParser.NUMBER, 0); }
-		public ITerminalNode SIDES() { return GetToken(DiceParser.SIDES, 0); }
+		public ITerminalNode[] NUMBER() { return GetTokens(DiceParser.NUMBER); }
+		public ITerminalNode NUMBER(int i) {
+			return GetToken(DiceParser.NUMBER, i);
+		}
 		public ITerminalNode DEE() { return GetToken(DiceParser.DEE, 0); }
 		public ITerminalNode EHPH() { return GetToken(DiceParser.EHPH, 0); }
 		public DiceContext(ParserRuleContext parent, int invokingState)
@@ -165,15 +163,15 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 8; Match(NUMBER);
-			State = 9;
+			State = 6; Match(NUMBER);
+			State = 7;
 			_la = _input.La(1);
 			if ( !(_la==DEE || _la==EHPH) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				Consume();
 			}
-			State = 10; Match(SIDES);
+			State = 8; Match(NUMBER);
 			}
 		}
 		catch (RecognitionException re) {
@@ -188,11 +186,11 @@ public partial class DiceParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\t\xF\x4\x2\t\x2"+
-		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x2\x2"+
-		"\x2\x4\x2\x2\x4\x2\x2\x3\x3\x2\b\t\f\x2\x6\x3\x2\x2\x2\x4\n\x3\x2\x2\x2"+
-		"\x6\a\a\x3\x2\x2\a\b\a\x4\x2\x2\b\t\x5\x4\x3\x2\t\x3\x3\x2\x2\x2\n\v\a"+
-		"\x6\x2\x2\v\f\t\x2\x2\x2\f\r\a\a\x2\x2\r\x5\x3\x2\x2\x2\x2";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\b\r\x4\x2\t\x2"+
+		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x2\x2\x2\x4\x2\x2"+
+		"\x4\x2\x2\x3\x3\x2\a\b\n\x2\x6\x3\x2\x2\x2\x4\b\x3\x2\x2\x2\x6\a\x5\x4"+
+		"\x3\x2\a\x3\x3\x2\x2\x2\b\t\a\x6\x2\x2\t\n\t\x2\x2\x2\n\v\a\x6\x2\x2\v"+
+		"\x5\x3\x2\x2\x2\x2";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

@@ -3,15 +3,15 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-statement: LABEL SEMICOLON dice;
-dice: NUMBER (DEE|EHPH) SIDES;	 
-
 LABEL: [a-zA-Z ,]+;
 SEMICOLON: ':';
 COMMA: ',';
 
 NUMBER: [0-9]+;
-SIDES: [0-9]+;
 
 DEE: [dD];
 EHPH: [fF];
+
+statement: dice ;
+dice: NUMBER (DEE|EHPH) NUMBER;	 
+
