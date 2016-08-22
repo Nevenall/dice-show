@@ -3,15 +3,9 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-LABEL: [a-zA-Z ,]+;
-SEMICOLON: ':';
-COMMA: ',';
+statement: (LABEL ':')? dice (',' dice)*;
+// actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
+dice: NUMBER ('d'|'D') NUMBER;	 
 
 NUMBER: [0-9]+;
-
-DEE: [dD];
-EHPH: [fF];
-
-statement: dice ;
-dice: NUMBER (DEE|EHPH) NUMBER;	 
-
+LABEL: [a-zA-Z ,0-9_]+;
