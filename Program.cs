@@ -34,7 +34,7 @@ namespace DiceShow {
                             
                             var tree = parser.statement();
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                            var listener = new MyDiceListener();
+                            var listener = new DiceListener();
                             
                             walker.Walk(listener, tree);
 									                             

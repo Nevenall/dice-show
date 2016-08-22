@@ -3,9 +3,11 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-statement: (LABEL ':')? dice (',' dice)*;
+statement: dice (',' dice)* ;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
-dice: NUMBER ('d'|'D') NUMBER;	 
+dice: number ('d'|'D') sides ;
+ 
+ 
+number: INT ;
 
-NUMBER: [0-9]+;
-LABEL: [a-zA-Z ,0-9_]+;
+INT: [0-9]+ ;

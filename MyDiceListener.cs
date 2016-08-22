@@ -3,7 +3,7 @@ using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 
-public class MyDiceListener : IDiceListener {
+public class DiceListener : IDiceListener {
 
     object Result = new object();
 
@@ -12,7 +12,7 @@ public class MyDiceListener : IDiceListener {
         // the result is 
         // roll a NUMBER of dice of size SIDES  
 
-
+        var s = "";
     }
 
  
