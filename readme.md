@@ -1,3 +1,2 @@
 # DiceShow
-DiceShow is an independant web app that allows you to make and log dice rolls for all kinds of purposes.
-
+DiceShow is a web app that allows you to record and share dice rolls for any purpose. It uses a flexible language to allow you to specific exactly what dice to roll and how to determine the results. 
