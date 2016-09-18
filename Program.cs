@@ -46,6 +46,9 @@ namespace DiceShow {
                                 Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", listener.Error.Symbol.Text, listener.Error.Symbol.Line, listener.Error.Symbol.Column);
                             }
 
+                            // so, if the listener has a prop that we can execute? it's the expression tree that we can then parse. 
+                            // or it could be a task that we can then execute. that's not a terrible idea. 
+
                         } catch(Exception ex) {
                             Console.ForegroundColor  = ConsoleColor.Red;
                             Console.WriteLine(ex.ToString());
