@@ -28,13 +28,13 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceLexer : Lexer {
 	public const int
-		T__0=1, T__1=2, T__2=3, NUMBER=4;
+		T__0=1, T__1=2, T__2=3, INT=4;
 	public static string[] modeNames = {
 		"DEFAULT_MODE"
 	};
 
 	public static readonly string[] ruleNames = {
-		"T__0", "T__1", "T__2", "NUMBER"
+		"T__0", "T__1", "T__2", "INT"
 	};
 
 
@@ -48,7 +48,7 @@ public partial class DiceLexer : Lexer {
 		null, "','", "'d'", "'D'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, "NUMBER"
+		null, null, null, null, "INT"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 

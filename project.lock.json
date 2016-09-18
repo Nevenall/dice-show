@@ -25,7 +25,7 @@
           "lib/netstandard1.1/Antlr4.Runtime.dll": {}
         }
       },
-      "Autofac/4.0.0-rc3-316": {
+      "Autofac/4.0.0": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
@@ -38,10 +38,10 @@
           "lib/netstandard1.1/Autofac.dll": {}
         }
       },
-      "Autofac.Extensions.DependencyInjection/4.0.0-rc3-309": {
+      "Autofac.Extensions.DependencyInjection/4.0.0": {
         "type": "package",
         "dependencies": {
-          "Autofac": "4.0.0-rc3-309",
+          "Autofac": "4.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
           "NETStandard.Library": "1.6.0"
         },
@@ -3662,12 +3662,12 @@
         "lib/portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1/Antlr4.Runtime.xml"
       ]
     },
-    "Autofac/4.0.0-rc3-316": {
-      "sha512": "Fx4lqVHUVHLU/F+JiZSFarRz1+9KuS452JkKWwWSPBGxtxlitqxFmxuXPFlOyj/SfLO2lDNhPVyOCyyCwNdfnA==",
+    "Autofac/4.0.0": {
+      "sha512": "SCKzdkxEhyP0ahU4j2Fl3SQEO3BzAgGl1WpXe7oNHdDiVKRJ6DRpumfSekABPaBygeWwjDt88PBqe2nRToRrYA==",
       "type": "package",
-      "path": "Autofac/4.0.0-rc3-316",
+      "path": "Autofac/4.0.0",
       "files": [
-        "Autofac.4.0.0-rc3-316.nupkg.sha512",
+        "Autofac.4.0.0.nupkg.sha512",
         "Autofac.nuspec",
         "lib/net451/Autofac.dll",
         "lib/net451/Autofac.xml",
@@ -3677,12 +3677,12 @@
         "lib/uap10.0/Autofac.xml"
       ]
     },
-    "Autofac.Extensions.DependencyInjection/4.0.0-rc3-309": {
-      "sha512": "pvVWo438PnaXU6ezQ0HHUnCPLUlvKWJZlXrnf6lfnKLI3hsOx87puiZP4gmstDKKwFyxAGZHbAOv/dBgDO4Q5w==",
+    "Autofac.Extensions.DependencyInjection/4.0.0": {
+      "sha512": "UQP+CkHs6wfjWhisuhSFoG8CNrG8fmYOclFwx/aYNc+He1Qoi8s9UDTSzcPncJ2JOtmZmFRWSLT0jhtT6KmYJg==",
       "type": "package",
-      "path": "Autofac.Extensions.DependencyInjection/4.0.0-rc3-309",
+      "path": "Autofac.Extensions.DependencyInjection/4.0.0",
       "files": [
-        "Autofac.Extensions.DependencyInjection.4.0.0-rc3-309.nupkg.sha512",
+        "Autofac.Extensions.DependencyInjection.4.0.0.nupkg.sha512",
         "Autofac.Extensions.DependencyInjection.nuspec",
         "lib/netstandard1.1/Autofac.Extensions.DependencyInjection.dll",
         "lib/netstandard1.1/Autofac.Extensions.DependencyInjection.xml"

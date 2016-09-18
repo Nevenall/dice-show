@@ -22,10 +22,6 @@ namespace DiceShow {
             
             var cb = new ContainerBuilder();
 
-            /// configure custom services.     
-            // cb.RegisterType<IParser, Default
-            
-
             cb.Populate(services);
             var container = cb.Build();
             return container.Resolve<IServiceProvider>();
@@ -37,7 +33,7 @@ namespace DiceShow {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
-                // use a user friendly exception page.
+                // todo - user friendly error page
             }
 
             app.UseWebSockets();

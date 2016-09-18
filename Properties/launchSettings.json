@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "DiceStream": {
+    "DiceShow": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "http://localhost:5000"

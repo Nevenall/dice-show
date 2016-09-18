@@ -7,39 +7,15 @@ public class DiceListener : IDiceListener {
 
     object Result = new object();
 
+    public IErrorNode Error { get; set; }
 
-    public void EnterDice([NotNull] DiceParser.DiceContext context) {
-        // the result is 
-        // roll a NUMBER of dice of size SIDES  
-
-        var s = "";
-    }
-
- 
-    public void EnterEveryRule(ParserRuleContext ctx) {
+    public void EnterEveryRule(ParserRuleContext context) {
 
     }
 
-    public void EnterStatement([NotNull] DiceParser.StatementContext context) {
-      // does the context    
+    public void ExitEveryRule(ParserRuleContext context) {
+
     }
-
-    public void ExitDice([NotNull] DiceParser.DiceContext context) {
-        
-    }
-
-
-    public void ExitEveryRule(ParserRuleContext ctx) {
-        
-    }
-
-    public void ExitStatement([NotNull] DiceParser.StatementContext context) {
-        
-    }
-
-
-    public IErrorNode Error {get;set;}
-
     public void VisitErrorNode(IErrorNode node) {
         Error = node;
     }
@@ -49,4 +25,23 @@ public class DiceListener : IDiceListener {
     }
 
  
+    public void EnterStatement(DiceParser.StatementContext context) {
+        var dice = context.dice();
+
+    }
+
+
+    public void ExitStatement(DiceParser.StatementContext context) {
+
+    }
+
+
+    public void EnterDice(DiceParser.DiceContext context) {
+        var s = "";
+    }
+
+    public void ExitDice(DiceParser.DiceContext context) {
+        
+    }
+
 }
