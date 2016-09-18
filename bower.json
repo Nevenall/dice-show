@@ -1,10 +1,10 @@
 {
   "name": "DiceShow",
-  "homepage": "https://github.com/Nevenall/DiceStream",
+  "homepage": "https://github.com/Nevenall/DiceShow",
   "authors": [
     "nevenall <nevenall@hotmail.com>"
   ],
-  "description": "web app for sharing dice rolls with",
+  "description": "web app for making and sharing dice rolls with anyone",
   "main": "project.json",
   "moduleType": [],
   "license": "MIT",

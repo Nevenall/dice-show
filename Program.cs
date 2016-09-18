@@ -19,7 +19,7 @@ namespace DiceShow {
             } else {
                 /// make a parse repl
                 do {
-                    Console.Write("DiceStream> ");
+                    Console.Write("DiceShow> ");
                     var rawInput = Console.ReadLine();
                     if (String.IsNullOrWhiteSpace(rawInput) || rawInput.ToLower() == "help") {
                         Console.WriteLine("enter a dice statement or 'quit' to exit");

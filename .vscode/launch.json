@@ -6,8 +6,10 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceStream.dll",
-            "args": ["web"],
+            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
+            "args": [
+                "web"
+            ],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
             "stopAtEntry": false,
@@ -30,18 +32,18 @@
             }
         },
         {
-            "name" : "Launch Parser",
+            "name": "Launch Parser",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceStream.dll",
-            "args": ["parser"],
+            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
+            "args": [
+                "parser"
+            ],
             "cwd": "${workspaceRoot}",
             "externalConsole": true,
             "stopAtEntry": false,
-            "env": {
-                
-            }
+            "env": {}
         },
         {
             "name": "Attach",

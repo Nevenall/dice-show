@@ -30,7 +30,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceParser : Parser {
 	public const int
-		T__0=1, T__1=2, T__2=3, NUMBER=4;
+		T__0=1, T__1=2, T__2=3, INT=4;
 	public const int
 		RULE_statement = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
@@ -41,7 +41,7 @@ public partial class DiceParser : Parser {
 		null, "','", "'d'", "'D'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, "NUMBER"
+		null, null, null, null, "INT"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -152,9 +152,9 @@ public partial class DiceParser : Parser {
 	}
 
 	public partial class DiceContext : ParserRuleContext {
-		public ITerminalNode[] NUMBER() { return GetTokens(DiceParser.NUMBER); }
-		public ITerminalNode NUMBER(int i) {
-			return GetToken(DiceParser.NUMBER, i);
+		public ITerminalNode[] INT() { return GetTokens(DiceParser.INT); }
+		public ITerminalNode INT(int i) {
+			return GetToken(DiceParser.INT, i);
 		}
 		public DiceContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -179,7 +179,7 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 12; Match(NUMBER);
+			State = 12; Match(INT);
 			State = 13;
 			_la = _input.La(1);
 			if ( !(_la==T__1 || _la==T__2) ) {
@@ -187,7 +187,7 @@ public partial class DiceParser : Parser {
 			} else {
 				Consume();
 			}
-			State = 14; Match(NUMBER);
+			State = 14; Match(INT);
 			}
 		}
 		catch (RecognitionException re) {
