@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
+            "program": "${workspaceRoot}\\Source\\DiceShow\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
             "args": [
                 "web"
             ],
@@ -36,7 +36,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
+            "program": "${workspaceRoot}\\Source\\DiceShow\\bin\\Debug\\netcoreapp1.0\\DiceShow.dll",
             "args": [
                 "parser"
             ],

@@ -37,7 +37,7 @@ public class DiceListener : IDiceListener {
 
 
     public void EnterDice(DiceParser.DiceContext context) {
-        context.
+        
     }
 
     public void ExitDice(DiceParser.DiceContext context) {

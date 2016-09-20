@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}\\project.json"
+                "${workspaceRoot}\\Source\\DiceShow\\project.json"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
@@ -15,7 +15,7 @@
         {
             "taskName": "test",
             "args": [
-                "${workspaceRoot}\\Tests\\project.json"
+                "${workspaceRoot}\\Tests\\DiceShow.Tests\\project.json"
             ],
             "isBuildCommand": false,
             "isTestCommand": true
