@@ -26,18 +26,18 @@ public class DiceListener : IDiceListener {
 
  
     public void EnterStatement(DiceParser.StatementContext context) {
-        var dice = context.dice();
+
 
     }
 
 
     public void ExitStatement(DiceParser.StatementContext context) {
-
+// get the dice context we created
     }
 
 
     public void EnterDice(DiceParser.DiceContext context) {
-        
+        context.
     }
 
     public void ExitDice(DiceParser.DiceContext context) {
