@@ -37,7 +37,12 @@ public class DiceListener : IDiceListener {
 
 
     public void EnterDice(DiceParser.DiceContext context) {
-        
+    //   context.Dice =  new Dice{ context.}; 
+
+
+System.Console.WriteLine("found '{0}' dice of '{1}' sides", context.INT(0), context.INT(1) );
+
+
     }
 
     public void ExitDice(DiceParser.DiceContext context) {
