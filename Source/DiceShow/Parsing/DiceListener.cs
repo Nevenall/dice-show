@@ -19,6 +19,7 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
+namespace DiceShow.Parsing {
 using Antlr4.Runtime.Misc;
 using IParseTreeListener = Antlr4.Runtime.Tree.IParseTreeListener;
 using IToken = Antlr4.Runtime.IToken;
@@ -31,15 +32,15 @@ using IToken = Antlr4.Runtime.IToken;
 [System.CLSCompliant(false)]
 public interface IDiceListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
+	/// Enter a parse tree produced by <see cref="DiceParser.roll"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterStatement([NotNull] DiceParser.StatementContext context);
+	void EnterRoll([NotNull] DiceParser.RollContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="DiceParser.statement"/>.
+	/// Exit a parse tree produced by <see cref="DiceParser.roll"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitStatement([NotNull] DiceParser.StatementContext context);
+	void ExitRoll([NotNull] DiceParser.RollContext context);
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.dice"/>.
@@ -52,3 +53,4 @@ public interface IDiceListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitDice([NotNull] DiceParser.DiceContext context);
 }
+} // namespace DiceShow.Parsing

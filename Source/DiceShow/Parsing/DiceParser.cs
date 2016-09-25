@@ -19,6 +19,7 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
+namespace DiceShow.Parsing {
 using Antlr4.Runtime;
 using Antlr4.Runtime.Atn;
 using Antlr4.Runtime.Misc;
@@ -30,18 +31,18 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceParser : Parser {
 	public const int
-		T__0=1, T__1=2, T__2=3, INT=4;
+		T__0=1, T__1=2, T__2=3, T__3=4, INT=5, LABEL=6;
 	public const int
-		RULE_statement = 0, RULE_dice = 1;
+		RULE_roll = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
-		"statement", "dice"
+		"roll", "dice"
 	};
 
 	private static readonly string[] _LiteralNames = {
-		null, "','", "'d'", "'D'"
+		null, "':'", "','", "'d'", "'D'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, "INT"
+		null, null, null, null, null, "INT", "LABEL"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -93,48 +94,51 @@ public partial class DiceParser : Parser {
 	{
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
-	public partial class StatementContext : ParserRuleContext {
+	public partial class RollContext : ParserRuleContext {
+		public ITerminalNode LABEL() { return GetToken(DiceParser.LABEL, 0); }
 		public DiceContext[] dice() {
 			return GetRuleContexts<DiceContext>();
 		}
 		public DiceContext dice(int i) {
 			return GetRuleContext<DiceContext>(i);
 		}
-		public StatementContext(ParserRuleContext parent, int invokingState)
+		public RollContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_statement; } }
+		public override int RuleIndex { get { return RULE_roll; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.EnterStatement(this);
+			if (typedListener != null) typedListener.EnterRoll(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.ExitStatement(this);
+			if (typedListener != null) typedListener.ExitRoll(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public StatementContext statement() {
-		StatementContext _localctx = new StatementContext(_ctx, State);
-		EnterRule(_localctx, 0, RULE_statement);
+	public RollContext roll() {
+		RollContext _localctx = new RollContext(_ctx, State);
+		EnterRule(_localctx, 0, RULE_roll);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 4; dice();
-			State = 9;
+			State = 4; Match(LABEL);
+			State = 5; Match(T__0);
+			State = 6; dice();
+			State = 11;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
-			while (_la==T__0) {
+			while (_la==T__1) {
 				{
 				{
-				State = 5; Match(T__0);
-				State = 6; dice();
+				State = 7; Match(T__1);
+				State = 8; dice();
 				}
 				}
-				State = 11;
+				State = 13;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -179,15 +183,15 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 12; Match(INT);
-			State = 13;
+			State = 14; Match(INT);
+			State = 15;
 			_la = _input.La(1);
-			if ( !(_la==T__1 || _la==T__2) ) {
+			if ( !(_la==T__2 || _la==T__3) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				Consume();
 			}
-			State = 14; Match(INT);
+			State = 16; Match(INT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -202,13 +206,15 @@ public partial class DiceParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\x6\x13\x4\x2\t"+
-		"\x2\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\a\x2\n\n\x2\f\x2\xE\x2\r\v\x2\x3\x3\x3"+
-		"\x3\x3\x3\x3\x3\x3\x3\x2\x2\x2\x4\x2\x2\x4\x2\x2\x3\x3\x2\x4\x5\x11\x2"+
-		"\x6\x3\x2\x2\x2\x4\xE\x3\x2\x2\x2\x6\v\x5\x4\x3\x2\a\b\a\x3\x2\x2\b\n"+
-		"\x5\x4\x3\x2\t\a\x3\x2\x2\x2\n\r\x3\x2\x2\x2\v\t\x3\x2\x2\x2\v\f\x3\x2"+
-		"\x2\x2\f\x3\x3\x2\x2\x2\r\v\x3\x2\x2\x2\xE\xF\a\x6\x2\x2\xF\x10\t\x2\x2"+
-		"\x2\x10\x11\a\x6\x2\x2\x11\x5\x3\x2\x2\x2\x3\v";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\b\x15\x4\x2\t\x2"+
+		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\x3\x2\x3\x2\a\x2\f\n\x2\f\x2\xE\x2\xF\v"+
+		"\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x2\x2\x2\x4\x2\x2\x4\x2\x2\x3\x3\x2"+
+		"\x5\x6\x13\x2\x6\x3\x2\x2\x2\x4\x10\x3\x2\x2\x2\x6\a\a\b\x2\x2\a\b\a\x3"+
+		"\x2\x2\b\r\x5\x4\x3\x2\t\n\a\x4\x2\x2\n\f\x5\x4\x3\x2\v\t\x3\x2\x2\x2"+
+		"\f\xF\x3\x2\x2\x2\r\v\x3\x2\x2\x2\r\xE\x3\x2\x2\x2\xE\x3\x3\x2\x2\x2\xF"+
+		"\r\x3\x2\x2\x2\x10\x11\a\a\x2\x2\x11\x12\t\x2\x2\x2\x12\x13\a\a\x2\x2"+
+		"\x13\x5\x3\x2\x2\x2\x3\r";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }
+} // namespace DiceShow.Parsing

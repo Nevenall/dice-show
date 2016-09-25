@@ -2,6 +2,7 @@
 using System.IO;
 using Antlr4.Runtime;
 using Microsoft.AspNetCore.Hosting;
+using DiceShow.Parsing;
 
 namespace DiceShow {
     public class Program {
@@ -32,7 +33,7 @@ namespace DiceShow {
                             CommonTokenStream tokens = new CommonTokenStream(lexer);
                             DiceParser parser = new DiceParser(tokens);
                             
-                            var tree = parser.statement();
+                            var tree = parser.roll();
                             var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
                             var listener = new DiceListener();
                             
@@ -40,15 +41,12 @@ namespace DiceShow {
 									                             
                             if(tree.exception != null) {
 							    throw tree.exception;
-                            }
-
-                            if(listener.Error != null) {
+                            } else if(listener.Error != null) {
                                 Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", listener.Error.Symbol.Text, listener.Error.Symbol.Line, listener.Error.Symbol.Column);
+                            } else {
+                                System.Console.WriteLine(listener.Roll);
                             }
-
-                            // so, if the listener has a prop that we can execute? it's the expression tree that we can then parse. 
-                            // or it could be a task that we can then execute. that's not a terrible idea. 
-
+                            
                         } catch(Exception ex) {
                             Console.ForegroundColor  = ConsoleColor.Red;
                             Console.WriteLine(ex.ToString());
