@@ -8,20 +8,14 @@ namespace DiceShow
     public class RandomDeterminer : IDeterminer
     {
 
-        private static Random _random;
-        private static object _sync;
-
-        static RandomDeterminer()
-        {
-            // random works over several calls. 
-            // If you create a new instance for each call you will get the same result often.
-            _random = new Random();
-        }
+        private static Random _random = new Random();
+        private static object _sync = new object();
 
         public int Determine(int minimum, int maximum)
         {
             lock (_sync)
             {
+                /// .net random is not inclusive on the max end, so we make so.
                 return _random.Next(minimum, maximum + 1);
             }
         }
