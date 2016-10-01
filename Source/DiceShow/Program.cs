@@ -44,8 +44,9 @@ namespace DiceShow {
                             } else if(listener.Error != null) {
                                 Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", listener.Error.Symbol.Text, listener.Error.Symbol.Line, listener.Error.Symbol.Column);
                             } else {
-                                // System.Console.WriteLine(listener.Roll);
-                                var determiner = new RandomDeterminer();
+                                System.Console.WriteLine(listener.Roll);
+                                var executer = new Executer(new RandomRoller());
+                                var result = executer.Execute(listener.Roll);
                             }
                             
                         } catch(Exception ex) {

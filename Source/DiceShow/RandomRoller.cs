@@ -5,13 +5,13 @@ using System;
 namespace DiceShow
 {
 
-    public class RandomDeterminer : IDeterminer
+    public class RandomRoller : IRoller
     {
 
         private static Random _random = new Random();
         private static object _sync = new object();
 
-        public int Determine(int minimum, int maximum)
+        public int Roll(int minimum, int maximum)
         {
             lock (_sync)
             {

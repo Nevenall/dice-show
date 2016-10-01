@@ -13,7 +13,6 @@ namespace DiceShow {
 
        public IServiceProvider ConfigureServices(IServiceCollection services) {
             
-
             services.AddSignalR(options => {
                 options.Hubs.EnableDetailedErrors = true;
             });

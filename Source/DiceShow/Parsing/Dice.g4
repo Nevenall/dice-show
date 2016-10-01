@@ -3,7 +3,7 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-roll: (LABEL ':')? dice (',' dice)*;
+roll: (DESCRIPTION ':')? dice (',' dice)*;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
 dice: (ID)? INT ('d'|'D') INT;
 // dice have an optional identifier, and an optional expression. You might roll
@@ -13,4 +13,5 @@ dice: (ID)? INT ('d'|'D') INT;
 //
 	 
 INT: [0-9]+ ;
-LABEL: [a-zA-Z ]+ ;
+DESCRIPTION: [a-zA-Z ]+ ;
+ID: [a-zA-Z_]+;
