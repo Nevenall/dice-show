@@ -7,43 +7,58 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace DiceShow {
+namespace DiceShow
+{
 
-    public class Startup {
+    public class Startup
+    {
 
-       public IServiceProvider ConfigureServices(IServiceCollection services) {
-            
-            services.AddSignalR(options => {
+        public IServiceProvider ConfigureServices(IServiceCollection services)
+        {
+
+            services.AddSignalR(options =>
+            {
                 options.Hubs.EnableDetailedErrors = true;
             });
 
             services.AddMvc();
-            
+
             var cb = new ContainerBuilder();
+
+            cb.RegisterType<Executer>().As<IExecuter>();
+            cb.RegisterType<RandomRoller>().As<IRoller>();
+            cb.RegisterType<Parser>().As<IParser>();
+
 
             cb.Populate(services);
             var container = cb.Build();
             return container.Resolve<IServiceProvider>();
-        } 
+        }
 
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory) {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory)
+        {
 
-            if (env.IsDevelopment()) {
+            if (env.IsDevelopment())
+            {
                 app.UseDeveloperExceptionPage();
-            } else {
+            }
+            else
+            {
                 // todo - user friendly error page
             }
 
             app.UseWebSockets();
             app.UseSignalR();
 
-            app.UseMvc(routes => {
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
-            });      
+            });
 
-         
-            app.Run(async (context) => {
+
+            app.Run(async (context) =>
+            {
                 await context.Response.WriteAsync("Hello World of the last resort. The Time is: " + DateTime.Now.ToString("hh:mm:ss tt"));
             });
         }

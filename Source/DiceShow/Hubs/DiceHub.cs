@@ -22,6 +22,7 @@ namespace DiceShow.Hubs {
         public object Roll(string rawStatement) {
 
 
+
             /// if we can't parse the rawStatement
            /// So, hopefully we never have a statement so large we need 
            // advanced compiler action to parse it out., 
