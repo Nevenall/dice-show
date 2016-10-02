@@ -12,11 +12,11 @@ namespace DiceShow
             _roller = roller;
         }
 
-        public Result Execute(Roll roll)
+        public Executed Execute(Roll roll)
         {
-           
-					 
-					 return new Result();
+
+
+            return new Executed();
         }
     }
 }

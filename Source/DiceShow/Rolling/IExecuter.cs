@@ -3,6 +3,6 @@ namespace DiceShow
 {
     public interface IExecuter
     {
-        Result Execute(Roll roll);
+        Executed Execute(Roll roll);
     }
 }

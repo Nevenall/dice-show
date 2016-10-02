@@ -5,7 +5,7 @@ namespace DiceShow
     public interface IParser
     {
 
-        Roll Parse(string raw);
+        Parsed Parse(string raw);
 
 
     }

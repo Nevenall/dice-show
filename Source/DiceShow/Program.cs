@@ -4,11 +4,15 @@ using Antlr4.Runtime;
 using Microsoft.AspNetCore.Hosting;
 using DiceShow.Parsing;
 
-namespace DiceShow {
-    public class Program {
-        public static void Main(string[] args) {
+namespace DiceShow
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
 
-            if (args.Length == 0 || args[0].ToLower() == "web") {
+            if (args.Length == 0 || args[0].ToLower() == "web")
+            {
                 var host = new WebHostBuilder()
                     .UseContentRoot(Directory.GetCurrentDirectory())
                     .UseKestrel()
@@ -17,46 +21,61 @@ namespace DiceShow {
 
                 host.Run();
 
-            } else {
+            }
+            else
+            {
                 /// make a parse repl
-                do {
+                do
+                {
                     Console.Write("DiceShow> ");
                     var rawInput = Console.ReadLine();
-                    if (String.IsNullOrWhiteSpace(rawInput) || rawInput.ToLower() == "help") {
+                    if (String.IsNullOrWhiteSpace(rawInput) || rawInput.ToLower() == "help")
+                    {
                         Console.WriteLine("enter a dice statement or 'quit' to exit");
-                    } else if (rawInput.ToLower() == "quit") {
+                    }
+                    else if (rawInput.ToLower() == "quit" || rawInput.ToLower() == "exit")
+                    {
                         break;
-                    } else {
-                        try {
-                            AntlrInputStream input = new AntlrInputStream(rawInput);
-                            DiceLexer lexer = new DiceLexer(input);
-                            CommonTokenStream tokens = new CommonTokenStream(lexer);
-                            DiceParser parser = new DiceParser(tokens);
-                            
-                            var tree = parser.roll();
-                            var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                            var listener = new DiceListener();
-                            
-                            walker.Walk(listener, tree);
-									                             
-                            if(tree.exception != null) {
-							    throw tree.exception;
-                            } else if(listener.Error != null) {
-                                Console.WriteLine("there was a tree walking error. Symbol = {0} Line = {1} Column = {2}", listener.Error.Symbol.Text, listener.Error.Symbol.Line, listener.Error.Symbol.Column);
-                            } else {
-                                var executer = new Executer(new RandomRoller());
-                                var result = executer.Execute(listener.Roll);
-                                Console.WriteLine(result);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            var parser = new Parser();
+                            var parsed = parser.Parse(rawInput);
+
+                            if (parsed.Exception != null)
+                            {
+                                Console.WriteLine($"There was an exception parsing -- {parsed.Exception}");
                             }
-                            
-                        } catch(Exception ex) {
-                            Console.ForegroundColor  = ConsoleColor.Red;
+                            else if (parsed.Error != null)
+                            {
+                                Console.WriteLine($"There was an error parsing -- {parsed.Error}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Parsed Roll -- {parsed.Roll}");
+                                var executer = new Executer(new RandomRoller());
+                                var executed = executer.Execute(parsed.Roll);
+                                if (executed.Exception != null)
+                                {
+                                    Console.WriteLine($"There was an exception executing -- {executed.Exception}");
+                                }
+                                else if (executed.Error != null)
+                                {
+                                    Console.WriteLine($"There was an error executing -- {executed.Error}");
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(ex.ToString());
                             Console.ResetColor();
                         }
                     }
-                } while(true);
-                
+                } while (true);
+
             }
         }
     }
