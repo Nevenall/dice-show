@@ -61,10 +61,6 @@ namespace DiceShow
                                 {
                                     Console.WriteLine($"There was an exception executing -- {executed.Exception}");
                                 }
-                                else if (executed.Error != null)
-                                {
-                                    Console.WriteLine($"There was an error executing -- {executed.Error}");
-                                }
                                 else
                                 {
                                     Console.WriteLine($"Executed Roll -- {executed.Result}");

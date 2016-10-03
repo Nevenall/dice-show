@@ -1,11 +1,10 @@
 T__0=1
 T__1=2
 T__2=3
-T__3=4
-INT=5
+INT=4
+SEPARATOR=5
 DESCRIPTION=6
-ID=7
+SPACES=7
 ':'=1
-','=2
-'d'=3
-'D'=4
+'d'=2
+'D'=3

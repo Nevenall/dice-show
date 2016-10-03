@@ -18,16 +18,6 @@ namespace DiceShow
         {
             var ret = new Executed();
 
-            /// roll Number of dice for each dice in order. 
-            // for a start
-            // there may be other options for things, like
-            // rolemaster style open ended rolling. 
-            // do we want to trace the rolling? 
-            // maybe we do
-
-            // how do we execute each roll? 
-            // we the roller is serialized. which should be ok. 
-            // 
             try
             {
                 ret.Result = new Result

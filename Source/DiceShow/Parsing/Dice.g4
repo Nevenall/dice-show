@@ -3,7 +3,7 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-roll: (DESCRIPTION ':')? dice (',' dice)*;
+roll: (DESCRIPTION ':' SPACES)? dice (SEPARATOR dice)*;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
 dice: INT ('d'|'D') INT;
 // dice have an optional identifier, and an optional expression. You might roll
@@ -13,7 +13,6 @@ dice: INT ('d'|'D') INT;
 //
 	 
 INT: [0-9]+ ;
+SEPARATOR: [ ,]+ ;
 DESCRIPTION: [a-zA-Z _]+ ;
-ID: [a-zA-Z_]+;
-
-// add rule to ignore whitespace
+SPACES : [ \t]+ -> skip ; 
