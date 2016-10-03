@@ -1,4 +1,10 @@
-namespace DiceShow
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace DiceShow.Models
 {
     public class Result
     {
@@ -14,12 +20,16 @@ namespace DiceShow
         // that is better \
         // {2d4: 3, 4}
 
-		  
-
+        public string Description { get; set; }
+        public IEnumerable<Tuple<Dice, IEnumerable<int>>> RolledDice { get; set; }
+        public IEnumerable<string> TraceLog { get; set; }
 
         public override string ToString()
         {
-            return $"";
+            var q = from d in RolledDice
+                    select $"{{d{d.Item1.Sides}: {string.Join(", ", d.Item2)}}}";
+
+            return $"{string.Join(" ", q)}";
         }
     }
 }

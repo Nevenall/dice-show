@@ -37,7 +37,9 @@ namespace DiceShow.Parsing
 
         public void EnterRoll([NotNull] DiceParser.RollContext context)
         {
-            Roll = new Roll { Description = context.LABEL().Symbol.Text };
+
+            
+            Roll = new Roll { Description = context.DESCRIPTION()?.Symbol.Text };
         }
 
         public void ExitRoll([NotNull] DiceParser.RollContext context)
