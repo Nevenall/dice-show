@@ -38,7 +38,7 @@ namespace DiceShow.Parsing
 
         public void EnterRoll([NotNull] DiceParser.RollContext context)
         {
-            Roll = new Roll { Description = context.TEXT()?.Symbol.Text };
+            Roll = new Roll {  };
         }
 
         public void ExitRoll([NotNull] DiceParser.RollContext context)
@@ -51,6 +51,7 @@ namespace DiceShow.Parsing
         {
             Roll.Dice.Add(new Dice
             {
+                Id = context.ID()?.Symbol.Text,
                 Number = Convert.ToInt32(context.INT(0).Symbol.Text),
                 Sides = Convert.ToInt32(context.INT(1).Symbol.Text)
             });

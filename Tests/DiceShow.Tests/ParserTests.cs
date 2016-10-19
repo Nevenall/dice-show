@@ -10,14 +10,13 @@ namespace DiceShow.Tests
     {
 
         [Theory]
+        
         [InlineData("2d6", "2d6")]
         [InlineData("2D6", "2d6")]
+        [InlineData("str 3d6 dex 3d6", "3d6, 3d6")]
         [InlineData("2d4 2d6 2d8", "2d4, 2d6, 2d8")]
         [InlineData("2d4,2d6,2d8", "2d4, 2d6, 2d8")]
         [InlineData("2d4, 2d6, 2d8", "2d4, 2d6, 2d8")]
-        [InlineData("This is a description: 2d6", "This is a description : 2d6")]
-        [InlineData("This is a description : 2d6", "This is a description  : 2d6")]
-        [InlineData("This is a description : 2d6 2d8", "This is a description : 2d6, 2d8")]
         public void can_parse_valid_input(string raw, string expected)
         {
             var parser = new Parser();

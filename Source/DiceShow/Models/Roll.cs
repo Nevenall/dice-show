@@ -12,20 +12,11 @@ namespace DiceShow.Models
             Dice = new Collection<Dice>();
         }
 
-        public string Description { get; set; }
-
         public Collection<Dice> Dice { get; set; }
 
         public override string ToString()
         {
-            if (this.Description != null)
-            {
-                return $"{this.Description} : {string.Join(", ", from d in this.Dice select d)}";
-            }
-            else
-            {
-                return $"{string.Join(", ", from d in this.Dice select d)}";
-            }
+            return $"{string.Join(", ", from d in Dice select d)}";
         }
 
     }

@@ -3,11 +3,11 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-roll: (TEXT ':' WS*)? dice (SEPARATOR dice)*;
+roll:  dice (SEPARATOR dice)*;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
-dice: INT ('d'|'D') INT;
+dice: ID? INT ('d'|'D') INT;
 
-TEXT: [a-zA-Z ]+ ;
+ID: [a-zA-Z]+ ;
+SEPARATOR: [;, ]+;
 INT: [0-9]+ ;
-SEPARATOR: [ ,;]+ ;
-WS: [ \t]  ;
+//WS: [ \t]+ -> skip;

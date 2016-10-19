@@ -22,7 +22,7 @@ namespace DiceShow
             {
                 ret.Result = new Result
                 {
-                    Description = roll.Description,
+                    
                     RolledDice = from d in roll.Dice
                                  select new Tuple<Dice, IEnumerable<int>>(d, from idx in Enumerable.Range(1, d.Number)
                                                                              select _roller.Roll(1, d.Sides))

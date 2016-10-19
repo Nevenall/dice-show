@@ -10,7 +10,7 @@ namespace DiceShow.Models
 
         public override string ToString()
         {
-            return $"Symbol = {Symbol} Line = {Line} Column = {Column}";
+            return $"{{Symbol = {Symbol} Line = {Line} Column = {Column}}}";
         }
     }
 }

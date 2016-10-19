@@ -4,6 +4,8 @@ namespace DiceShow.Models
     public class Dice
     {
 
+
+        public string Id { get; set; } = string.Empty;
         public int Number { get; set; }
 
         public int Sides { get; set; }
@@ -11,7 +13,7 @@ namespace DiceShow.Models
 
         public override string ToString()
         {
-            return $"{this.Number}d{this.Sides}";
+            return $"{Id} {Number}d{Sides}";
         }
 
 

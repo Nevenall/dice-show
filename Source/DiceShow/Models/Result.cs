@@ -20,7 +20,7 @@ namespace DiceShow.Models
         // that is better \
         // {2d4: 3, 4}
 
-        public string Description { get; set; }
+
         public IEnumerable<Tuple<Dice, IEnumerable<int>>> RolledDice { get; set; }
         public IEnumerable<string> TraceLog { get; set; }
 

@@ -42,11 +42,13 @@ namespace DiceShow
                         {
                             var parser = new Parser();
                             var parsed = parser.Parse(rawInput);
-                            var errors = from e in parsed.Errors select $"{{e}}";
+                            //var errors = from e in parsed.Errors select string.Concat("{", e.ToString(), "}");
 
                             Console.WriteLine($"Parsing Exception -- {parsed.Exception}");
-                            Console.WriteLine($"Parsing Errors -- {string.Join(", ", errors)}");
+                            Console.WriteLine($"Parsing Errors -- {string.Join(", ", parsed.Errors)}");
                             Console.WriteLine($"Parsed Roll -- {parsed.Roll}");
+
+
 
                             var executer = new Executer(new RandomRoller());
                             var executed = executer.Execute(parsed.Roll);
