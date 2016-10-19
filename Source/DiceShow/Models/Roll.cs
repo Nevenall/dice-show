@@ -16,14 +16,16 @@ namespace DiceShow.Models
 
         public Collection<Dice> Dice { get; set; }
 
-        // Add some flags for how to determine the results
-        // sum or separate
-
-
-
         public override string ToString()
         {
-            return $"{this.Description} : {string.Join(", ", from d in this.Dice select d.ToString())}";
+            if (this.Description != null)
+            {
+                return $"{this.Description} : {string.Join(", ", from d in this.Dice select d)}";
+            }
+            else
+            {
+                return $"{string.Join(", ", from d in this.Dice select d)}";
+            }
         }
 
     }

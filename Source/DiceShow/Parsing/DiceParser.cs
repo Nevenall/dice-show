@@ -31,7 +31,7 @@ using DFA = Antlr4.Runtime.Dfa.DFA;
 [System.CLSCompliant(false)]
 public partial class DiceParser : Parser {
 	public const int
-		T__0=1, T__1=2, T__2=3, INT=4, SEPARATOR=5, DESCRIPTION=6, SPACES=7;
+		T__0=1, T__1=2, T__2=3, TEXT=4, INT=5, SEPARATOR=6, WS=7;
 	public const int
 		RULE_roll = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
@@ -42,7 +42,7 @@ public partial class DiceParser : Parser {
 		null, "':'", "'d'", "'D'"
 	};
 	private static readonly string[] _SymbolicNames = {
-		null, null, null, null, "INT", "SEPARATOR", "DESCRIPTION", "SPACES"
+		null, null, null, null, "TEXT", "INT", "SEPARATOR", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -101,11 +101,14 @@ public partial class DiceParser : Parser {
 		public DiceContext dice(int i) {
 			return GetRuleContext<DiceContext>(i);
 		}
-		public ITerminalNode DESCRIPTION() { return GetToken(DiceParser.DESCRIPTION, 0); }
-		public ITerminalNode SPACES() { return GetToken(DiceParser.SPACES, 0); }
+		public ITerminalNode TEXT() { return GetToken(DiceParser.TEXT, 0); }
 		public ITerminalNode[] SEPARATOR() { return GetTokens(DiceParser.SEPARATOR); }
 		public ITerminalNode SEPARATOR(int i) {
 			return GetToken(DiceParser.SEPARATOR, i);
+		}
+		public ITerminalNode[] WS() { return GetTokens(DiceParser.WS); }
+		public ITerminalNode WS(int i) {
+			return GetToken(DiceParser.WS, i);
 		}
 		public RollContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
@@ -130,28 +133,40 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 7;
+			State = 12;
 			_la = _input.La(1);
-			if (_la==DESCRIPTION) {
+			if (_la==TEXT) {
 				{
-				State = 4; Match(DESCRIPTION);
+				State = 4; Match(TEXT);
 				State = 5; Match(T__0);
-				State = 6; Match(SPACES);
+				State = 9;
+				_errHandler.Sync(this);
+				_la = _input.La(1);
+				while (_la==WS) {
+					{
+					{
+					State = 6; Match(WS);
+					}
+					}
+					State = 11;
+					_errHandler.Sync(this);
+					_la = _input.La(1);
+				}
 				}
 			}
 
-			State = 9; dice();
-			State = 14;
+			State = 14; dice();
+			State = 19;
 			_errHandler.Sync(this);
 			_la = _input.La(1);
 			while (_la==SEPARATOR) {
 				{
 				{
-				State = 10; Match(SEPARATOR);
-				State = 11; dice();
+				State = 15; Match(SEPARATOR);
+				State = 16; dice();
 				}
 				}
-				State = 16;
+				State = 21;
 				_errHandler.Sync(this);
 				_la = _input.La(1);
 			}
@@ -196,15 +211,15 @@ public partial class DiceParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 17; Match(INT);
-			State = 18;
+			State = 22; Match(INT);
+			State = 23;
 			_la = _input.La(1);
 			if ( !(_la==T__1 || _la==T__2) ) {
 			_errHandler.RecoverInline(this);
 			} else {
 				Consume();
 			}
-			State = 19; Match(INT);
+			State = 24; Match(INT);
 			}
 		}
 		catch (RecognitionException re) {
@@ -219,15 +234,17 @@ public partial class DiceParser : Parser {
 	}
 
 	public static readonly string _serializedATN =
-		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\t\x18\x4\x2\t\x2"+
-		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\x5\x2\n\n\x2\x3\x2\x3\x2\x3\x2\a\x2\xF\n"+
-		"\x2\f\x2\xE\x2\x12\v\x2\x3\x3\x3\x3\x3\x3\x3\x3\x3\x3\x2\x2\x2\x4\x2\x2"+
-		"\x4\x2\x2\x3\x3\x2\x4\x5\x17\x2\t\x3\x2\x2\x2\x4\x13\x3\x2\x2\x2\x6\a"+
-		"\a\b\x2\x2\a\b\a\x3\x2\x2\b\n\a\t\x2\x2\t\x6\x3\x2\x2\x2\t\n\x3\x2\x2"+
-		"\x2\n\v\x3\x2\x2\x2\v\x10\x5\x4\x3\x2\f\r\a\a\x2\x2\r\xF\x5\x4\x3\x2\xE"+
-		"\f\x3\x2\x2\x2\xF\x12\x3\x2\x2\x2\x10\xE\x3\x2\x2\x2\x10\x11\x3\x2\x2"+
-		"\x2\x11\x3\x3\x2\x2\x2\x12\x10\x3\x2\x2\x2\x13\x14\a\x6\x2\x2\x14\x15"+
-		"\t\x2\x2\x2\x15\x16\a\x6\x2\x2\x16\x5\x3\x2\x2\x2\x4\t\x10";
+		"\x3\xAF6F\x8320\x479D\xB75C\x4880\x1605\x191C\xAB37\x3\t\x1D\x4\x2\t\x2"+
+		"\x4\x3\t\x3\x3\x2\x3\x2\x3\x2\a\x2\n\n\x2\f\x2\xE\x2\r\v\x2\x5\x2\xF\n"+
+		"\x2\x3\x2\x3\x2\x3\x2\a\x2\x14\n\x2\f\x2\xE\x2\x17\v\x2\x3\x3\x3\x3\x3"+
+		"\x3\x3\x3\x3\x3\x2\x2\x2\x4\x2\x2\x4\x2\x2\x3\x3\x2\x4\x5\x1D\x2\xE\x3"+
+		"\x2\x2\x2\x4\x18\x3\x2\x2\x2\x6\a\a\x6\x2\x2\a\v\a\x3\x2\x2\b\n\a\t\x2"+
+		"\x2\t\b\x3\x2\x2\x2\n\r\x3\x2\x2\x2\v\t\x3\x2\x2\x2\v\f\x3\x2\x2\x2\f"+
+		"\xF\x3\x2\x2\x2\r\v\x3\x2\x2\x2\xE\x6\x3\x2\x2\x2\xE\xF\x3\x2\x2\x2\xF"+
+		"\x10\x3\x2\x2\x2\x10\x15\x5\x4\x3\x2\x11\x12\a\b\x2\x2\x12\x14\x5\x4\x3"+
+		"\x2\x13\x11\x3\x2\x2\x2\x14\x17\x3\x2\x2\x2\x15\x13\x3\x2\x2\x2\x15\x16"+
+		"\x3\x2\x2\x2\x16\x3\x3\x2\x2\x2\x17\x15\x3\x2\x2\x2\x18\x19\a\a\x2\x2"+
+		"\x19\x1A\t\x2\x2\x2\x1A\x1B\a\a\x2\x2\x1B\x5\x3\x2\x2\x2\x5\v\xE\x15";
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }

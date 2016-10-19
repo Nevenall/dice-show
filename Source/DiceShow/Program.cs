@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
-using Antlr4.Runtime;
 using Microsoft.AspNetCore.Hosting;
-using DiceShow.Parsing;
 
 namespace DiceShow
 {
@@ -43,29 +42,24 @@ namespace DiceShow
                         {
                             var parser = new Parser();
                             var parsed = parser.Parse(rawInput);
+                            var errors = from e in parsed.Errors select $"{{e}}";
 
-                            if (parsed.Exception != null)
+                            Console.WriteLine($"Parsing Exception -- {parsed.Exception}");
+                            Console.WriteLine($"Parsing Errors -- {string.Join(", ", errors)}");
+                            Console.WriteLine($"Parsed Roll -- {parsed.Roll}");
+
+                            var executer = new Executer(new RandomRoller());
+                            var executed = executer.Execute(parsed.Roll);
+
+                            if (executed.Exception != null)
                             {
-                                Console.WriteLine($"There was an exception parsing -- {parsed.Exception}");
-                            }
-                            else if (parsed.Error != null)
-                            {
-                                Console.WriteLine($"There was an error parsing -- {parsed.Error}");
+                                Console.WriteLine($"There was an exception executing -- {executed.Exception}");
                             }
                             else
                             {
-                                Console.WriteLine($"Parsed Roll -- {parsed.Roll}");
-                                var executer = new Executer(new RandomRoller());
-                                var executed = executer.Execute(parsed.Roll);
-                                if (executed.Exception != null)
-                                {
-                                    Console.WriteLine($"There was an exception executing -- {executed.Exception}");
-                                }
-                                else
-                                {
-                                    Console.WriteLine($"Executed Roll -- {executed.Result}");
-                                }
+                                Console.WriteLine($"Executed Roll -- {executed.Result}");
                             }
+
                         }
                         catch (Exception ex)
                         {

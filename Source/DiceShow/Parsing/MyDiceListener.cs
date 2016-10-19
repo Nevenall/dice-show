@@ -1,4 +1,5 @@
 using System;
+using System.Collections.ObjectModel;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
@@ -11,7 +12,7 @@ namespace DiceShow.Parsing
 
         public Roll Roll { get; set; }
 
-        public IErrorNode Error { get; set; }
+        public Collection<IErrorNode> Errors { get; set; } = new Collection<IErrorNode>();
 
 
 
@@ -27,7 +28,7 @@ namespace DiceShow.Parsing
         }
         public void VisitErrorNode(IErrorNode node)
         {
-            Error = node;
+            Errors.Add(node);
         }
 
         public void VisitTerminal(ITerminalNode node)
@@ -37,9 +38,7 @@ namespace DiceShow.Parsing
 
         public void EnterRoll([NotNull] DiceParser.RollContext context)
         {
-
-            
-            Roll = new Roll { Description = context.DESCRIPTION()?.Symbol.Text };
+            Roll = new Roll { Description = context.TEXT()?.Symbol.Text };
         }
 
         public void ExitRoll([NotNull] DiceParser.RollContext context)
