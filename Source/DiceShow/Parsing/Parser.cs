@@ -18,7 +18,10 @@ namespace DiceShow
                 var tree = internalParser.roll();
                 var listener = new DiceListener();
 
+                ret.ParseTree = tree.ToStringTree(internalParser);
+
                 walker.Walk(listener, tree);
+
 
                 ret.Exception = tree.exception;
                 ret.Roll = listener.Roll;

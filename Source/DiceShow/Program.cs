@@ -42,25 +42,19 @@ namespace DiceShow
                         {
                             var parser = new Parser();
                             var parsed = parser.Parse(rawInput);
-                            //var errors = from e in parsed.Errors select string.Concat("{", e.ToString(), "}");
 
-                            Console.WriteLine($"Parsing Exception -- {parsed.Exception}");
-                            Console.WriteLine($"Parsing Errors -- {string.Join(", ", parsed.Errors)}");
-                            Console.WriteLine($"Parsed Roll -- {parsed.Roll}");
-
-
+                            Console.WriteLine("-- Parsing -- ");
+                            Console.WriteLine($"Tree -- {parsed.ParseTree}");
+                            Console.WriteLine($"Exception -- {parsed.Exception}");
+                            Console.WriteLine($"Errors -- {string.Join(", ", parsed.Errors)}");
+                            Console.WriteLine($"Roll -- {parsed.Roll}");
 
                             var executer = new Executer(new RandomRoller());
                             var executed = executer.Execute(parsed.Roll);
 
-                            if (executed.Exception != null)
-                            {
-                                Console.WriteLine($"There was an exception executing -- {executed.Exception}");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Executed Roll -- {executed.Result}");
-                            }
+                            Console.WriteLine("-- Executed --");
+                            Console.WriteLine($"Exception -- {executed.Exception}");
+                            Console.WriteLine($"Results -- {executed.Result}");
 
                         }
                         catch (Exception ex)

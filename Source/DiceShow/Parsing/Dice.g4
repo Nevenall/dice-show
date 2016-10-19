@@ -10,4 +10,3 @@ dice: ID? INT ('d'|'D') INT;
 ID: [a-zA-Z]+ ;
 SEPARATOR: [;, ]+;
 INT: [0-9]+ ;
-//WS: [ \t]+ -> skip;
