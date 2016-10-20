@@ -3,7 +3,7 @@
 grammar Dice;
 options { language=CSharp_v4_5; }
 
-roll:  dice (SEPARATOR dice)*;
+statement:  dice (SEPARATOR dice)*;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
 dice: ID? INT ('d'|'D') INT;
 

@@ -13,7 +13,7 @@ namespace DiceShow.Tests
         
         [InlineData("2d6", "2d6")]
         [InlineData("2D6", "2d6")]
-        [InlineData("str 3d6 dex 3d6", "3d6, 3d6")]
+        [InlineData("str 3d6 dex 3d6", "str 3d6, dex 3d6")]
         [InlineData("2d4 2d6 2d8", "2d4, 2d6, 2d8")]
         [InlineData("2d4,2d6,2d8", "2d4, 2d6, 2d8")]
         [InlineData("2d4, 2d6, 2d8", "2d4, 2d6, 2d8")]
@@ -23,8 +23,8 @@ namespace DiceShow.Tests
 
             var parsed = parser.Parse(raw);
 
-            Assert.True(parsed.Roll != null, $"Parsing Errors = {string.Join(", ", parsed.Errors.Select(e => e.ToString()))}\nParsing Exception = {parsed.Exception}");
-            Assert.Equal(expected, parsed.Roll.ToString());
+            Assert.True(parsed.Statement != null, $"Parsing Errors = {string.Join(", ", parsed.Errors)}\nParsing Exception = {parsed.Exception}");
+            Assert.Equal(expected, parsed.Statement.ToString());
         }
 
         [Theory]

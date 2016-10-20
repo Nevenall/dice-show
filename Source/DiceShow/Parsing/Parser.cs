@@ -15,7 +15,7 @@ namespace DiceShow
             {
                 var internalParser = new DiceParser(new CommonTokenStream(new DiceLexer(new AntlrInputStream(raw))));
                 var walker = new Antlr4.Runtime.Tree.ParseTreeWalker();
-                var tree = internalParser.roll();
+                var tree = internalParser.statement();
                 var listener = new DiceListener();
 
                 ret.ParseTree = tree.ToStringTree(internalParser);
@@ -24,7 +24,7 @@ namespace DiceShow
 
 
                 ret.Exception = tree.exception;
-                ret.Roll = listener.Roll;
+                ret.Statement = listener.Statement;
                 ret.Errors = from e in listener.Errors
                              select new ParseError
                              {

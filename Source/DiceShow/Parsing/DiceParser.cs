@@ -33,9 +33,9 @@ public partial class DiceParser : Parser {
 	public const int
 		T__0=1, T__1=2, ID=3, SEPARATOR=4, INT=5;
 	public const int
-		RULE_roll = 0, RULE_dice = 1;
+		RULE_statement = 0, RULE_dice = 1;
 	public static readonly string[] ruleNames = {
-		"roll", "dice"
+		"statement", "dice"
 	};
 
 	private static readonly string[] _LiteralNames = {
@@ -94,7 +94,7 @@ public partial class DiceParser : Parser {
 	{
 		_interp = new ParserATNSimulator(this,_ATN);
 	}
-	public partial class RollContext : ParserRuleContext {
+	public partial class StatementContext : ParserRuleContext {
 		public DiceContext[] dice() {
 			return GetRuleContexts<DiceContext>();
 		}
@@ -105,25 +105,25 @@ public partial class DiceParser : Parser {
 		public ITerminalNode SEPARATOR(int i) {
 			return GetToken(DiceParser.SEPARATOR, i);
 		}
-		public RollContext(ParserRuleContext parent, int invokingState)
+		public StatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_roll; } }
+		public override int RuleIndex { get { return RULE_statement; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.EnterRoll(this);
+			if (typedListener != null) typedListener.EnterStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.ExitRoll(this);
+			if (typedListener != null) typedListener.ExitStatement(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public RollContext roll() {
-		RollContext _localctx = new RollContext(_ctx, State);
-		EnterRule(_localctx, 0, RULE_roll);
+	public StatementContext statement() {
+		StatementContext _localctx = new StatementContext(_ctx, State);
+		EnterRule(_localctx, 0, RULE_statement);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);

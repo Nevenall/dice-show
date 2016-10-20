@@ -3,7 +3,7 @@ using System;
 namespace DiceShow.Models
 {
 
-    public class Executed
+    public class Evaluated
     {
 
         public Result Result { get; set; }

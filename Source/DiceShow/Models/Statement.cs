@@ -4,10 +4,10 @@ using System.Linq;
 namespace DiceShow.Models
 {
 
-    public class Roll
+    public class Statement
     {
 
-        public Roll()
+        public Statement()
         {
             Dice = new Collection<Dice>();
         }

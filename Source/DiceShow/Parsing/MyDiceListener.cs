@@ -10,7 +10,7 @@ namespace DiceShow.Parsing
     public class DiceListener : IDiceListener
     {
 
-        public Roll Roll { get; set; }
+        public Statement  Statement { get; set; }
 
         public Collection<IErrorNode> Errors { get; set; } = new Collection<IErrorNode>();
 
@@ -36,12 +36,12 @@ namespace DiceShow.Parsing
 
         }
 
-        public void EnterRoll([NotNull] DiceParser.RollContext context)
+        public void EnterStatement([NotNull] DiceParser.StatementContext context)
         {
-            Roll = new Roll {  };
+            Statement = new Statement {  };
         }
 
-        public void ExitRoll([NotNull] DiceParser.RollContext context)
+        public void ExitStatement([NotNull] DiceParser.StatementContext context)
         {
 
         }
@@ -49,7 +49,7 @@ namespace DiceShow.Parsing
 
         public void EnterDice(DiceParser.DiceContext context)
         {
-            Roll.Dice.Add(new Dice
+            Statement.Dice.Add(new Dice
             {
                 Id = context.ID()?.Symbol.Text,
                 Number = Convert.ToInt32(context.INT(0).Symbol.Text),

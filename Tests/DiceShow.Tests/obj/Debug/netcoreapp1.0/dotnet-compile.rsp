@@ -198,5 +198,6 @@
 --reference:C:\Users\neven\.nuget\packages\xunit.runner.reporters\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\neven\.nuget\packages\xunit.runner.utility\2.2.0-beta2-build3300\lib\netstandard1.1\xunit.runner.utility.dotnet.dll
 --reference:d:\Source\DiceShow\Source\DiceShow\bin\Debug\netcoreapp1.0\DiceShow.dll
+d:\Source\DiceShow\Tests\DiceShow.Tests\EvaluatorTests.cs
 d:\Source\DiceShow\Tests\DiceShow.Tests\ParserTests.cs
 d:\Source\DiceShow\Tests\DiceShow.Tests\RollerTests.cs

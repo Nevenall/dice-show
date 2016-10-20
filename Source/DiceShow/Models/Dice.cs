@@ -5,7 +5,7 @@ namespace DiceShow.Models
     {
 
 
-        public string Id { get; set; } = string.Empty;
+        public string Id { get; set; }
         public int Number { get; set; }
 
         public int Sides { get; set; }
@@ -13,7 +13,7 @@ namespace DiceShow.Models
 
         public override string ToString()
         {
-            return $"{Id} {Number}d{Sides}";
+            return Id != null ? $"{Id} {Number}d{Sides}" : $"{Number}d{Sides}";
         }
 
 

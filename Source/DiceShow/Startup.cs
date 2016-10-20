@@ -25,7 +25,7 @@ namespace DiceShow
 
             var cb = new ContainerBuilder();
 
-            cb.RegisterType<Executer>().As<IExecuter>();
+            cb.RegisterType<Executer>().As<IEvaluator>();
             cb.RegisterType<RandomRoller>().As<IRoller>();
             cb.RegisterType<Parser>().As<IParser>();
 

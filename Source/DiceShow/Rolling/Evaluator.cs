@@ -5,7 +5,7 @@ using DiceShow.Models;
 
 namespace DiceShow
 {
-    public class Executer : IExecuter
+    public class Executer : IEvaluator
     {
 
         private IRoller _roller;
@@ -14,9 +14,9 @@ namespace DiceShow
             _roller = roller;
         }
 
-        public Executed Execute(Roll roll)
+        public Evaluated Evaluate(Statement roll)
         {
-            var ret = new Executed();
+            var ret = new Evaluated();
 
             try
             {

@@ -36,17 +36,17 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class DiceBaseListener : IDiceListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="DiceParser.roll"/>.
+	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterRoll([NotNull] DiceParser.RollContext context) { }
+	public virtual void EnterStatement([NotNull] DiceParser.StatementContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="DiceParser.roll"/>.
+	/// Exit a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitRoll([NotNull] DiceParser.RollContext context) { }
+	public virtual void ExitStatement([NotNull] DiceParser.StatementContext context) { }
 
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.dice"/>.

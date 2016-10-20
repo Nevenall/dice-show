@@ -47,10 +47,10 @@ namespace DiceShow
                             Console.WriteLine($"Tree -- {parsed.ParseTree}");
                             Console.WriteLine($"Exception -- {parsed.Exception}");
                             Console.WriteLine($"Errors -- {string.Join(", ", parsed.Errors)}");
-                            Console.WriteLine($"Roll -- {parsed.Roll}");
+                            Console.WriteLine($"Roll -- {parsed.Statement}");
 
                             var executer = new Executer(new RandomRoller());
-                            var executed = executer.Execute(parsed.Roll);
+                            var executed = executer.Evaluate(parsed.Statement);
 
                             Console.WriteLine("-- Executed --");
                             Console.WriteLine($"Exception -- {executed.Exception}");
