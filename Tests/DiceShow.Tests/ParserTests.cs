@@ -29,6 +29,7 @@ namespace DiceShow.Tests
 
         [Theory]
         [InlineData("")]
+        [InlineData("str dex 3d6")]
         public void report_parsing_errors(string raw)
         {
 
