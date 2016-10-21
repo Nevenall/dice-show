@@ -10,7 +10,7 @@
             "args": [
                 "web"
             ],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}\\App",
             "externalConsole": false,
             "stopAtEntry": false,
             "launchBrowser": {
@@ -40,7 +40,7 @@
             "args": [
                 "parser"
             ],
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}\\App",
             "externalConsole": true,
             "stopAtEntry": false,
             "env": {}
