@@ -27,7 +27,7 @@
           "version": "1.0.0-*",
           "type": "platform"
         },
-        "System": {
+        "DiceShow.System": {
           "target": "project"
         },
         "System.Runtime.Serialization.Primitives": "4.1.1-*"

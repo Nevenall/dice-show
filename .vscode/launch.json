@@ -6,11 +6,11 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\App\\bin\\Debug\\netcoreapp1.0\\App.dll",
+            "program": "${workspaceRoot}\\DiceShow.App\\bin\\Debug\\netcoreapp1.0\\DiceShow.App.dll",
             "args": [
                 "web"
             ],
-            "cwd": "${workspaceRoot}\\App",
+            "cwd": "${workspaceRoot}\\DiceShow.App",
             "externalConsole": false,
             "stopAtEntry": false,
             "launchBrowser": {
@@ -36,11 +36,11 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\App\\bin\\Debug\\netcoreapp1.0\\App.dll",
+            "program": "${workspaceRoot}\\DiceShow.App\\bin\\Debug\\netcoreapp1.0\\DiceShow.App.dll",
             "args": [
                 "parser"
             ],
-            "cwd": "${workspaceRoot}\\App",
+            "cwd": "${workspaceRoot}\\DiceShow.App",
             "externalConsole": true,
             "stopAtEntry": false,
             "env": {}

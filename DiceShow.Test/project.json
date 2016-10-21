@@ -16,7 +16,7 @@
           "type": "platform",
           "version": "1.0.1"
         },
-        "System": {
+        "DiceShow.System": {
           "target": "project"
         }
       },
