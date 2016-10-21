@@ -18,16 +18,17 @@
     "Microsoft.AspNetCore.StaticFiles": "1.1.0-alpha1-21752",
     "Microsoft.AspNetCore.WebSockets.Server": "0.2.0-alpha1-21752",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0-alpha1-21752",
-    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752",
-    "Antlr4": "4.5.3.1-beta001"
+    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752"
   },
   "frameworks": {
-    // "net461": {},
     "netcoreapp1.0": {
       "dependencies": {
         "Microsoft.NETCore.App": {
           "version": "1.0.0-*",
           "type": "platform"
+        },
+        "System": {
+          "target": "project"
         },
         "System.Runtime.Serialization.Primitives": "4.1.1-*"
       },

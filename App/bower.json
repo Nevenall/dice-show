@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "knockout": "latest",
+    "vue": "latest",
     "bootstrap": "https://github.com/twbs/bootstrap.git#v4-dev",
     "jquery": "latest",
     "signalr": "latest"
