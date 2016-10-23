@@ -14,7 +14,7 @@ namespace DiceShow
             {
                 var host = new WebHostBuilder()
                     .UseContentRoot(Directory.GetCurrentDirectory())
-                    
+                    .UseIISIntegration()
                     .UseKestrel()
                     .UseStartup<Startup>()
                     .Build();
