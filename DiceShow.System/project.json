@@ -4,16 +4,16 @@
 		"debugType": "portable"
 	},
 	"dependencies": {
-		"Antlr4": "4.5.3.1-beta001"
+		"Antlr4": "4.5.3.1-beta001",
+		"System.Runtime.Serialization.Primitives": "4.1.1"
 	},
 	"frameworks": {
 		"netcoreapp1.0": {
 			"dependencies": {
 				"Microsoft.NETCore.App": {
-					"version": "1.0.0-*",
+					"version": "1.0.1",
 					"type": "platform"
-				},
-				"System.Runtime.Serialization.Primitives": "4.1.1-*"
+				}
 			},
 			"imports": "dnxcore50"
 		}
