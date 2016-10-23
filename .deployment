@@ -1,2 +1,2 @@
 [config]
-project = DiceShow.App
+command = DiceShow.App\deploy.cmd
