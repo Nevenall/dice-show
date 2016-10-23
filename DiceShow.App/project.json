@@ -9,29 +9,22 @@
     "Autofac": "4.0.0-*",
     "Autofac.Extensions.DependencyInjection": "4.0.0-*",
     "Microsoft.AspNet.SignalR.JS": "2.2.1",
-    "Microsoft.AspNet.WebSockets.Server": "1.0.0-rc1-final",
-    "Microsoft.AspNetCore.Diagnostics": "1.1.0-alpha1-21752",
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Mvc": "1.1.0-alpha1-21752",
-    "Microsoft.AspNetCore.Owin": "1.1.0-alpha1-21752",
-    "Microsoft.AspNetCore.Server.Kestrel": " 1.1.0-alpha1-21752",
-    "Microsoft.AspNetCore.SignalR.Server": "0.2.0-alpha1-21752",
-    "Microsoft.AspNetCore.StaticFiles": "1.1.0-alpha1-21752",
-    "Microsoft.AspNetCore.WebSockets.Server": "0.2.0-alpha1-21752",
-    "Microsoft.Extensions.Configuration.FileExtensions": "1.1.0-alpha1-21752",
-    "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21752"
+    "Microsoft.AspNetCore": "1.1.0-*",
+    "Microsoft.AspNetCore.Mvc": "1.1.0-*",
+    "Microsoft.AspNetCore.Owin": "1.1.0-*",
+    "Microsoft.AspNetCore.SignalR.Server": "0.2.0-*",
+    "Microsoft.AspNetCore.WebSockets": "0.2.0-*"
   },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
         "Microsoft.NETCore.App": {
-          "version": "1.0.0-*",
+          "version": "1.0.*",
           "type": "platform"
         },
         "DiceShow.System": {
           "target": "project"
-        },
-        "System.Runtime.Serialization.Primitives": "4.1.1-*"
+        }
       },
       "imports": "dnxcore50"
     }

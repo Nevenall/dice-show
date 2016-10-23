@@ -46,7 +46,12 @@ namespace DiceShow
             else
             {
                 // todo - user friendly error page
+                app.UseExceptionHandler("/Home/Error");
+
             }
+
+            app.UseStaticFiles();
+
 
             app.UseWebSockets();
             app.UseSignalR();
