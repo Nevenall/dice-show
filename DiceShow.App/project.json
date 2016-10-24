@@ -28,5 +28,12 @@
       },
       "imports": "dnxcore50"
     }
+  },
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "**/*.cshtml",
+      "web.config"
+    ]
   }
 }
