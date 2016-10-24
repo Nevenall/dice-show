@@ -66,9 +66,14 @@ SET MSBUILD_PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin\MSBuild.exe
 
 echo Handling ASP.NET Core Web Application deployment.
 
+:: 0. Add aspnetvnext nuget source to resolve pre-release packages.
+call :ExecuteCmd nuget.exe sources Add -Name aspnetvnext -Source https://www.myget.org/F/aspnetvnext/api/v3/index.json
+IF !ERRORLEVEL! NEQ 0 goto error
+
 :: 1. Restore nuget packages
 call :ExecuteCmd nuget.exe restore -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
+
 
 :: 2. Build and publish
 call :ExecuteCmd dotnet publish "project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release
