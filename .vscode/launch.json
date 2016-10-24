@@ -3,6 +3,11 @@
     "configurations": [
         {
             "name": "Launch Website",
+            "logging": {
+                "exceptions": true,
+                "programOutput": true,
+                "trace": true
+            },
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",

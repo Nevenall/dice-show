@@ -11,8 +11,7 @@ namespace DiceShow.Controllers {
             return View();
         }
 
-        // action for a dice stream
-        // a
+     
 
     }
 
