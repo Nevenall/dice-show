@@ -33,7 +33,7 @@
                 }
             },
             "env": {
-                "aspnet_environment": "development"
+                "aspnet_env": "development"
             }
         },
         {
