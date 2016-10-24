@@ -60,12 +60,6 @@ namespace DiceShow
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
             });
-
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World of the last resort. The Time is: " + DateTime.Now.ToString("hh:mm:ss tt"));
-            });
         }
     }
 
