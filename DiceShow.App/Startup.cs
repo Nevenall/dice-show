@@ -42,14 +42,14 @@ namespace DiceShow
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //app.UseDirectoryBrowser();
+                app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                app.UseStaticFiles();
             }
-
-            app.UseStaticFiles();
-
 
             app.UseWebSockets();
             app.UseSignalR();
@@ -59,6 +59,33 @@ namespace DiceShow
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
             });
         }
+
+
+        public void ConfigureProduction(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory)
+        {
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseStaticFiles();
+                app.UseDirectoryBrowser();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
+                app.UseDirectoryBrowser();
+            }
+
+            app.UseWebSockets();
+            app.UseSignalR();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
+            });
+        }
+
     }
 
 }
