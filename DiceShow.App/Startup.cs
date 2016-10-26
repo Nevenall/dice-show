@@ -15,7 +15,6 @@ namespace DiceShow
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-
             services.AddSignalR(options =>
             {
                 options.Hubs.EnableDetailedErrors = true;
@@ -42,7 +41,7 @@ namespace DiceShow
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                //app.UseDirectoryBrowser();
+                // in dev mode serve all files including .scss
                 app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
             }
             else
@@ -59,33 +58,6 @@ namespace DiceShow
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
             });
         }
-
-
-        public void ConfigureProduction(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory)
-        {
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseStaticFiles();
-                app.UseDirectoryBrowser();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
-                app.UseDirectoryBrowser();
-            }
-
-            app.UseWebSockets();
-            app.UseSignalR();
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
-            });
-        }
-
     }
 
 }
