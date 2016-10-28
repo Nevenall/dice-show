@@ -2,12 +2,12 @@
 
 using Microsoft.AspNetCore.SignalR;
 
-namespace DiceShow.Hubs {
+namespace DiceShow.App.Hubs {
 
-    public class DiceHub : Hub {
+    public class LogHub : Hub {
 
 
-        public DiceHub() {
+        public LogHub() {
           
             
         }

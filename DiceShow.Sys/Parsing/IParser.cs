@@ -1,6 +1,6 @@
-using DiceShow.Models;
+using DiceShow.Sys.Models;
 
-namespace DiceShow
+namespace DiceShow.Sys.Parsing
 {
     public interface IParser
     {

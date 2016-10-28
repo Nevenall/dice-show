@@ -3,14 +3,15 @@ using System.Collections.ObjectModel;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
-using DiceShow.Models;
+using DiceShow.Sys.Models;
+using DiceShow.Sys.Parsing.Internal;
 
-namespace DiceShow.Parsing
+namespace DiceShow.Sys.Parsing
 {
     public class DiceListener : IDiceListener
     {
 
-        public Statement  Statement { get; set; }
+        public Statement Statement { get; set; }
 
         public Collection<IErrorNode> Errors { get; set; } = new Collection<IErrorNode>();
 
@@ -38,7 +39,7 @@ namespace DiceShow.Parsing
 
         public void EnterStatement([NotNull] DiceParser.StatementContext context)
         {
-            Statement = new Statement {  };
+            Statement = new Statement { };
         }
 
         public void ExitStatement([NotNull] DiceParser.StatementContext context)

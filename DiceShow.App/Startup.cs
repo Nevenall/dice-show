@@ -1,6 +1,8 @@
 using System;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using DiceShow.Sys.Parsing;
+using DiceShow.Sys.Rolling;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

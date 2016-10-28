@@ -1,5 +1,6 @@
-using DiceShow.Models;
-namespace DiceShow
+using DiceShow.Sys.Models;
+
+namespace DiceShow.Sys.Rolling
 {
     public interface IEvaluator
     {

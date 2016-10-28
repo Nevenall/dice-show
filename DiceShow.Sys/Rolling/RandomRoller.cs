@@ -2,7 +2,7 @@
 
 using System;
 
-namespace DiceShow
+namespace DiceShow.Sys.Rolling
 {
 
     public class RandomRoller : IRoller

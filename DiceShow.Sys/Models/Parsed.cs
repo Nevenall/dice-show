@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace DiceShow.Models
+namespace DiceShow.Sys.Models
 {
     public class Parsed
     {

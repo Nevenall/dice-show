@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DiceShow.Models;
+using DiceShow.Sys.Models;
 
-namespace DiceShow
+namespace DiceShow.Sys.Rolling
 {
     public class Executer : IEvaluator
     {

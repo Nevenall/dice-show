@@ -1,6 +1,6 @@
 using System;
 
-namespace DiceShow.Models
+namespace DiceShow.Sys.Models
 {
 
     public class Evaluated
