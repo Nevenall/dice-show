@@ -48,17 +48,18 @@ namespace DiceShow
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 app.UseStaticFiles();
             }
 
             app.UseWebSockets();
             app.UseSignalR();
+            app.UseMvc();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
-            });
+            // app.UseMvc(routes =>
+            // {
+            //     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
+            // });
         }
     }
 

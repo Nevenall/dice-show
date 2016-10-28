@@ -12,9 +12,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceRoot}\\DiceShow.App\\bin\\Debug\\netcoreapp1.0\\DiceShow.App.dll",
-            "args": [
-                "web"
-            ],
+            "args": [],
             "cwd": "${workspaceRoot}\\DiceShow.App",
             "externalConsole": false,
             "stopAtEntry": false,
