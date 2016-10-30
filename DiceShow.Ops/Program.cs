@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.IO;
-using DiceShow.Sys.Rolling;
-using DiceShow.Sys.Parsing;
+using DiceShow.Ops.Rolling;
+using DiceShow.Ops.Parsing;
 
-namespace DiceShow.Sys
+namespace DiceShow.Ops
 {
     public class Program
     {

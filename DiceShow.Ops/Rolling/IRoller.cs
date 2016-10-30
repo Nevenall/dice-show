@@ -1,4 +1,4 @@
-﻿namespace DiceShow.Sys.Rolling
+﻿namespace DiceShow.Ops.Rolling
 {
 
     /// <summary>

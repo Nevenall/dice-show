@@ -19,7 +19,7 @@
 // Ambiguous reference in cref attribute
 #pragma warning disable 419
 
-namespace DiceShow.Sys.Parsing.Internal {
+namespace DiceShow.Ops.Parsing.Internal {
 using Antlr4.Runtime;
 using Antlr4.Runtime.Atn;
 using Antlr4.Runtime.Misc;
@@ -228,4 +228,4 @@ public partial class DiceParser : Parser {
 	public static readonly ATN _ATN =
 		new ATNDeserializer().Deserialize(_serializedATN.ToCharArray());
 }
-} // namespace DiceShow.Sys.Parsing.Internal
+} // namespace DiceShow.Ops.Parsing.Internal

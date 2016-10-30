@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Xunit;
-using DiceShow.Sys.Rolling;
+using DiceShow.Ops.Rolling;
 
 
 namespace DiceShow.Tests

@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace DiceShow.Sys.Models
+namespace DiceShow.Ops.Models
 {
 
     public class Statement

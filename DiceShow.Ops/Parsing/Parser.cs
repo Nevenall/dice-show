@@ -1,10 +1,10 @@
 using Antlr4.Runtime;
-using DiceShow.Sys.Models;
+using DiceShow.Ops.Models;
 using System;
 using System.Linq;
-using DiceShow.Sys.Parsing.Internal;
+using DiceShow.Ops.Parsing.Internal;
 
-namespace DiceShow.Sys.Parsing
+namespace DiceShow.Ops.Parsing
 {
     public class Parser : IParser
     {

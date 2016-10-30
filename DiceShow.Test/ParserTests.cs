@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Xunit;
-using DiceShow.Sys.Parsing;
+using DiceShow.Ops.Parsing;
 
 
 namespace DiceShow.Tests

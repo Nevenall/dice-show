@@ -39,11 +39,11 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\DiceShow.Sys\\bin\\Debug\\netcoreapp1.0\\DiceShow.Sys.dll",
+            "program": "${workspaceRoot}\\DiceShow.Ops\\bin\\Debug\\netcoreapp1.0\\DiceShow.Ops.dll",
             "args": [
                 "parser"
             ],
-            "cwd": "${workspaceRoot}\\DiceShow.Sys",
+            "cwd": "${workspaceRoot}\\DiceShow.Ops",
             "externalConsole": true,
             "stopAtEntry": false,
             "env": {}
