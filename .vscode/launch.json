@@ -49,6 +49,20 @@
             "env": {}
         },
         {
+            "name": "Launch Storage",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}\\DiceShow.Storage\\bin\\Debug\\netcoreapp1.0\\DiceShow.Storage.dll",
+            "args": [
+                "parser"
+            ],
+            "cwd": "${workspaceRoot}\\DiceShow.Storage",
+            "externalConsole": true,
+            "stopAtEntry": false,
+            "env": {}
+        },
+        {
             "name": "Attach",
             "type": "coreclr",
             "request": "attach",

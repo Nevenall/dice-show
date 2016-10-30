@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.IO;
+﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
 namespace DiceShow.App
@@ -9,8 +7,6 @@ namespace DiceShow.App
     {
         public static void Main(string[] args)
         {
-
-
             var host = new WebHostBuilder()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()

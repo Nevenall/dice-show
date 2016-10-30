@@ -3511,6 +3511,13 @@
           "Antlr4": "4.5.4-beta001",
           "Microsoft.NETCore.App": "1.0.1"
         }
+      },
+      "DiceShow.Storage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.0",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.1"
+        }
       }
     }
   },
@@ -9586,6 +9593,10 @@
     "DiceShow.Ops/1.0.0": {
       "type": "project",
       "path": "../DiceShow.Ops/project.json"
+    },
+    "DiceShow.Storage/1.0.0": {
+      "type": "project",
+      "path": "../DiceShow.Storage/project.json"
     }
   },
   "projectFileDependencyGroups": {
@@ -9601,6 +9612,7 @@
     ],
     ".NETCoreApp,Version=v1.0": [
       "DiceShow.Ops",
+      "DiceShow.Storage",
       "Microsoft.NETCore.App >= 1.0.1"
     ]
   },

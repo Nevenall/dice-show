@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.IO;
 using DiceShow.Ops.Rolling;
 using DiceShow.Ops.Parsing;
 

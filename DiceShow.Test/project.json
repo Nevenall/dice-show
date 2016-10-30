@@ -18,6 +18,9 @@
         },
         "DiceShow.Ops": {
           "target": "project"
+        },
+        "DiceShow.Storage": {
+          "target": "project"
         }
       },
       "imports": [
