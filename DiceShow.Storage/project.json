@@ -4,7 +4,10 @@
     "debugType": "portable",
     "emitEntryPoint": true
   },
-  "dependencies": {},
+  "dependencies": {
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0-*",
+    "Newtonsoft.Json": "*"
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
