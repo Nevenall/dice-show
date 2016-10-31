@@ -14,10 +14,15 @@ namespace DiceShow.Storage
             try
             {
                 var config = new ConfigurationBuilder()
-					 .AddEnvironmentVariables("diceshow_")
-					 .Build();
+                     .AddEnvironmentVariables("diceshow_")
+                     .Build();
 
-                System.Console.WriteLine(JsonConvert.SerializeObject(config.AsEnumerable(), Formatting.Indented));
+                var connection = config["storage_connection"];
+
+                System.Console.WriteLine($"Connecting to Storage using '{connection}'");
+
+                
+
 
 
             }
