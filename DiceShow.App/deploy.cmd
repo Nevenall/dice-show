@@ -66,6 +66,8 @@ SET MSBUILD_PATH=%ProgramFiles(x86)%\MSBuild\14.0\Bin\MSBuild.exe
 
 echo Handling ASP.NET Core Web Application deployment.
 
+:: 0. Set Environment Variables
+call :ExecuteCmd setx "ASPNETCORE_ENVIRONMENT" "development"
 
 :: 1. Restore nuget packages
 call :ExecuteCmd nuget.exe restore -packagesavemode nuspec
