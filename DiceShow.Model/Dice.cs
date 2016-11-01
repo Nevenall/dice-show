@@ -1,4 +1,4 @@
-namespace DiceShow.Ops.Models
+namespace DiceShow.Model
 {
 
     public class Dice

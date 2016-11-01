@@ -1,9 +1,10 @@
 
 
-using System;
 
 namespace DiceShow.Ops.Rolling
 {
+    using System;
+    using DiceShow.Model;
 
     public class RandomRoller : IRoller
     {

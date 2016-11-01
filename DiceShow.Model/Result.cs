@@ -1,11 +1,13 @@
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace DiceShow.Ops.Models
+namespace DiceShow.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    
     public class Result
     {
         // Result, is rolled dice.

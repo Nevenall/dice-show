@@ -1,13 +1,14 @@
-using System;
-using System.Collections.ObjectModel;
-using Antlr4.Runtime;
-using Antlr4.Runtime.Misc;
-using Antlr4.Runtime.Tree;
-using DiceShow.Ops.Models;
-using DiceShow.Ops.Parsing.Internal;
 
 namespace DiceShow.Ops.Parsing
 {
+    using System;
+    using System.Collections.ObjectModel;
+    using Antlr4.Runtime;
+    using Antlr4.Runtime.Misc;
+    using Antlr4.Runtime.Tree;
+
+    using DiceShow.Ops.Parsing.Internal;
+    using DiceShow.Model;
     public class DiceListener : IDiceListener
     {
 

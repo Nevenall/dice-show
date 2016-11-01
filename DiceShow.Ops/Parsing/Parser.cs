@@ -1,11 +1,11 @@
-using Antlr4.Runtime;
-using DiceShow.Ops.Models;
-using System;
-using System.Linq;
-using DiceShow.Ops.Parsing.Internal;
 
 namespace DiceShow.Ops.Parsing
 {
+    using Antlr4.Runtime;
+    using System;
+    using System.Linq;
+    using DiceShow.Ops.Parsing.Internal;
+    using DiceShow.Model;
     public class Parser : IParser
     {
         public Parsed Parse(string raw)

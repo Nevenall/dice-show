@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DiceShow.Model;
 
-namespace DiceShow
+namespace DiceShow.App
 {
-
     public class Startup
     {
 
@@ -39,9 +39,6 @@ namespace DiceShow
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory)
         {
 
-// todo - need to setup an app.config for this app now because we have a connnection stringh
-// docdb connection string = AccountEndpoint=https://diceshow.documents.azure.com:443/;AccountKey=N9pyEMe6ADa5Z761gdaFvmLNHPangB9ueup6CBMQufcHa5Cadq1MXdNMANfMyOWVwxt6T7aLM6RrXKAvl7sDUQ==;
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -57,11 +54,6 @@ namespace DiceShow
             app.UseWebSockets();
             app.UseSignalR();
             app.UseMvc();
-
-            // app.UseMvc(routes =>
-            // {
-            //     routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}");
-            // });
         }
     }
 

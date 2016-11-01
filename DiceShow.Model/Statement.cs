@@ -1,8 +1,9 @@
-using System.Collections.ObjectModel;
-using System.Linq;
 
-namespace DiceShow.Ops.Models
+namespace DiceShow.Model
 {
+    using System.Linq;
+    using System.Collections.ObjectModel;
+
 
     public class Statement
     {

@@ -7,8 +7,9 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}\\DiceShow.Storage\\project.json",
+                "${workspaceRoot}\\DiceShow.Model\\project.json",
                 "${workspaceRoot}\\DiceShow.Ops\\project.json",
+                "${workspaceRoot}\\DiceShow.Storage\\project.json",
                 "${workspaceRoot}\\DiceShow.App\\project.json",
                 "${workspaceRoot}\\DiceShow.Test\\project.json"
             ],

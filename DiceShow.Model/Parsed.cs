@@ -1,10 +1,12 @@
 
 
-using System;
-using System.Collections.Generic;
 
-namespace DiceShow.Ops.Models
+namespace DiceShow.Model
 {
+    using System;
+    using System.Collections.Generic;
+
+    
     public class Parsed
     {
         public string ParseTree { get; set; }
