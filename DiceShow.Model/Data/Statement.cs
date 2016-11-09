@@ -4,7 +4,7 @@ namespace DiceShow.Model
     using System.Linq;
     using System.Collections.ObjectModel;
 
-
+    ///
     public class Statement
     {
 

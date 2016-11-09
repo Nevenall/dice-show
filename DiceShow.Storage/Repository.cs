@@ -31,10 +31,10 @@ namespace DiceShow.Storage
         {
 
             FlurlHttp.Configure(c =>
-                  {
-                      c.AllowedHttpStatusRange = "*";
-                      //c.BeforeCall = call => Console.WriteLine(JsonConvert.SerializeObject(call.Request.Headers), ConsoleColor.Yellow);
-                  });
+                    {
+                        c.AllowedHttpStatusRange = "*";
+                            //c.BeforeCall = call => Console.WriteLine(JsonConvert.SerializeObject(call.Request.Headers), ConsoleColor.Yellow);
+                        });
         }
 
         public Repository(string connection, string database)
@@ -50,14 +50,21 @@ namespace DiceShow.Storage
             }
         }
 
+
+
+        // actual repo will focus on the program models like statement and roll and such. 
+        // 
+
+
+
         public async Task<bool> DoesDatabaseExist(string id)
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, id)
-                      .WithHeader("x-ms-version", ApiVersion)
-                      .WithHeader("x-ms-date", date)
-                      .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
-                      .GetAsync();
+                         .WithHeader("x-ms-version", ApiVersion)
+                         .WithHeader("x-ms-date", date)
+                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
+                         .GetAsync();
 
             if (ret.StatusCode == HttpStatusCode.NotFound)
             {
@@ -79,10 +86,10 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, _databaseId, Collections, id)
-                      .WithHeader("x-ms-version", ApiVersion)
-                      .WithHeader("x-ms-date", date)
-                      .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
-                      .GetAsync();
+                         .WithHeader("x-ms-version", ApiVersion)
+                         .WithHeader("x-ms-date", date)
+                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
+                         .GetAsync();
 
             if (ret.StatusCode == HttpStatusCode.NotFound)
             {
@@ -103,10 +110,10 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases)
-                      .WithHeader("x-ms-version", ApiVersion)
-                      .WithHeader("x-ms-date", date)
-                      .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
-                     .PostJsonAsync(new { id = id });
+                         .WithHeader("x-ms-version", ApiVersion)
+                         .WithHeader("x-ms-date", date)
+                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
+                        .PostJsonAsync(new { id = id });
 
             ret.EnsureSuccessStatusCode();
 
@@ -117,15 +124,15 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, _databaseId, Collections)
-                      .WithHeader("x-ms-version", ApiVersion)
-                      .WithHeader("x-ms-date", date)
-							 .WithHeader("x-ms-offer-throughput", 400)
-                      .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
-                     .PostJsonAsync(new { id = id });
+                         .WithHeader("x-ms-version", ApiVersion)
+                         .WithHeader("x-ms-date", date)
+                      .WithHeader("x-ms-offer-throughput", 400)
+                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
+                        .PostJsonAsync(new { id = id });
 
             ret.EnsureSuccessStatusCode();
 
-				return await ret.Content.ReadAsJsonAsync<Collection>();
+            return await ret.Content.ReadAsJsonAsync<Collection>();
         }
 
 
