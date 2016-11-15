@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiceShow.App.Controllers
 {
-	 public class LogController : Controller
+	 public class DiceLogController : Controller
 	 {
 
 
@@ -22,7 +22,7 @@ namespace DiceShow.App.Controllers
 
 				ViewBag.LogName = name;
 
-				return View("Log");
+				return View("DiceLog");
 		  }
 
 		  [Route("log/{name}/{roll}")]
@@ -31,7 +31,7 @@ namespace DiceShow.App.Controllers
 
 				ViewBag.LogName = name;
 				ViewBag.Roll = roll;
-				return View("Log");
+				return View("DiceLog");
 
 		  }
 

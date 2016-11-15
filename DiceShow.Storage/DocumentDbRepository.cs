@@ -14,7 +14,8 @@ namespace DiceShow.Storage
     using System.Net;
     using System.Text.Encodings.Web;
     using DiceShow.Storage.Models;
-    public class Repository : IRepository
+    public class DocumentDbRepository
+    //: IRepository
     {
 
         private string _endpoint;
@@ -27,17 +28,17 @@ namespace DiceShow.Storage
         const string Collections = "colls";
 
 
-        static Repository()
+        static DocumentDbRepository()
         {
 
             FlurlHttp.Configure(c =>
-                    {
-                        c.AllowedHttpStatusRange = "*";
-                            //c.BeforeCall = call => Console.WriteLine(JsonConvert.SerializeObject(call.Request.Headers), ConsoleColor.Yellow);
-                        });
+                      {
+                          c.AllowedHttpStatusRange = "*";
+                          //c.BeforeCall = call => Console.WriteLine(JsonConvert.SerializeObject(call.Request.Headers), ConsoleColor.Yellow);
+                      });
         }
 
-        public Repository(string connection, string database)
+        public DocumentDbRepository(string connection, string database)
         {
             _endpoint = connection.Split(';')[0].Split('=')[1];
             _key = connection.Split(';')[1].Split(new char[] { '=' }, count: 2)[1];
@@ -61,10 +62,10 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, id)
-                         .WithHeader("x-ms-version", ApiVersion)
-                         .WithHeader("x-ms-date", date)
-                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
-                         .GetAsync();
+                             .WithHeader("x-ms-version", ApiVersion)
+                             .WithHeader("x-ms-date", date)
+                             .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
+                             .GetAsync();
 
             if (ret.StatusCode == HttpStatusCode.NotFound)
             {
@@ -86,10 +87,10 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, _databaseId, Collections, id)
-                         .WithHeader("x-ms-version", ApiVersion)
-                         .WithHeader("x-ms-date", date)
-                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
-                         .GetAsync();
+                             .WithHeader("x-ms-version", ApiVersion)
+                             .WithHeader("x-ms-date", date)
+                             .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
+                             .GetAsync();
 
             if (ret.StatusCode == HttpStatusCode.NotFound)
             {
@@ -110,10 +111,10 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases)
-                         .WithHeader("x-ms-version", ApiVersion)
-                         .WithHeader("x-ms-date", date)
-                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
-                        .PostJsonAsync(new { id = id });
+                             .WithHeader("x-ms-version", ApiVersion)
+                             .WithHeader("x-ms-date", date)
+                             .WithHeader("authorization", MakeAuth(HttpMethod.Get, Databases, date, id))
+                            .PostJsonAsync(new { id = id });
 
             ret.EnsureSuccessStatusCode();
 
@@ -124,11 +125,11 @@ namespace DiceShow.Storage
         {
             var date = DateTime.UtcNow.ToString("r");
             var ret = await _endpoint.AppendPathSegments(Databases, _databaseId, Collections)
-                         .WithHeader("x-ms-version", ApiVersion)
-                         .WithHeader("x-ms-date", date)
-                      .WithHeader("x-ms-offer-throughput", 400)
-                         .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
-                        .PostJsonAsync(new { id = id });
+                             .WithHeader("x-ms-version", ApiVersion)
+                             .WithHeader("x-ms-date", date)
+                         .WithHeader("x-ms-offer-throughput", 400)
+                             .WithHeader("authorization", MakeAuth(HttpMethod.Get, Collections, date, id))
+                            .PostJsonAsync(new { id = id });
 
             ret.EnsureSuccessStatusCode();
 

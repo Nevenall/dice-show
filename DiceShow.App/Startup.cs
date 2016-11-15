@@ -8,17 +8,21 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using DiceShow.Model;
+using DiceShow.Storage;
 
 namespace DiceShow.App
 {
     public class Startup
     {
 
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services, IHostingEnvironment env)
         {
             services.AddSignalR(options =>
             {
-                options.Hubs.EnableDetailedErrors = true;
+                if (env.IsDevelopment())
+                {
+                    options.Hubs.EnableDetailedErrors = true;
+                }
             });
 
             services.AddMvc();
@@ -28,6 +32,15 @@ namespace DiceShow.App
             cb.RegisterType<Executer>().As<IEvaluator>();
             cb.RegisterType<RandomRoller>().As<IRoller>();
             cb.RegisterType<Parser>().As<IParser>();
+
+            if (env.IsDevelopment())
+            {
+                cb.RegisterType<InMemoryRepository>().As<IRepository>();
+            }
+            else
+            {
+                cb.RegisterType<DocumentDbRepository>().As<IRepository>();
+            }
 
 
             cb.Populate(services);

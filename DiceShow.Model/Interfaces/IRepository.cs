@@ -23,17 +23,17 @@ namespace DiceShow.Model
         // we can use 
         // 
 
-        string CurrentRepository { get; set; }
+        string CurrentRepository { get;  }
 
-        bool IsNameAvailable(DiceLog log);
+        bool IsNameAvailable(string logName);
         
-        DiceLog Get(string name);
-        Record Get(int id);
+        DiceLog Get(string logName);
+        Record Get(string logName, int id);
 
 
         void Store(DiceLog log);
 
-        void Store(Record record);
+        void Store(string logName, Record record);
 
 
     }

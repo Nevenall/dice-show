@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace DiceShow.App.Hubs {
 
-    public class LogHub : Hub {
+    public class DiceLogHub : Hub {
 
 
-        public LogHub() {
+        public DiceLogHub() {
           
             
         }
