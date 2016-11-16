@@ -3,38 +3,47 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DiceShow.App.Controllers
 {
-	 public class DiceLogController : Controller
-	 {
 
 
-		  [Route("log")]
-		  public IActionResult RedirectToHome()
-		  {
+    using DiceShow.Model;
+
+    public class DiceLogController : Controller
+    {
+
+        IRepository _repo;
+        public DiceLogController(IRepository repo)
+        {
+            _repo = repo;
+        }
+
+        [Route("log")]
+        public IActionResult RedirectToHome()
+        {
 
 
-				return Redirect("");
-		  }
+            return Redirect("");
+        }
 
 
-		  [Route("log/{name}")]
-		  public IActionResult ShowDiceLog(string name)
-		  {
+        [Route("log/{name}")]
+        public IActionResult ShowDiceLog(string name)
+        {
 
-				ViewBag.LogName = name;
+            ViewBag.LogName = name;
 
-				return View("DiceLog");
-		  }
+            return View("DiceLog");
+        }
 
-		  [Route("log/{name}/{roll}")]
-		  public IActionResult ShowDiceRoll(string name, int roll)
-		  {
+        [Route("log/{name}/{roll}")]
+        public IActionResult ShowDiceRoll(string name, int roll)
+        {
 
-				ViewBag.LogName = name;
-				ViewBag.Roll = roll;
-				return View("DiceLog");
+            ViewBag.LogName = name;
+            ViewBag.Roll = roll;
+            return View("DiceLog");
 
-		  }
+        }
 
 
-	 }
+    }
 }

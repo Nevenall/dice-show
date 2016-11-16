@@ -12,11 +12,16 @@ using DiceShow.Storage;
 
 namespace DiceShow.App
 {
+
+    using System.Linq;
     public class Startup
     {
 
-        public IServiceProvider ConfigureServices(IServiceCollection services, IHostingEnvironment env)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            var env = services.SingleOrDefault(d => d.ServiceType == typeof(IHostingEnvironment)).ImplementationInstance as IHostingEnvironment;
+
+
             services.AddSignalR(options =>
             {
                 if (env.IsDevelopment())
@@ -35,11 +40,11 @@ namespace DiceShow.App
 
             if (env.IsDevelopment())
             {
-                cb.RegisterType<InMemoryRepository>().As<IRepository>();
+                cb.Register<InMemoryRepository>(c => new InMemoryRepository("InMemoryRepository")).As<IRepository>();
             }
             else
             {
-                cb.RegisterType<DocumentDbRepository>().As<IRepository>();
+               // cb.Register<DocumentDbRepository>(c=> new DocumentDbRepository("connectionString","databaseName")).As<IRepository>();
             }
 
 
