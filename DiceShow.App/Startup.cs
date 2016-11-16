@@ -44,7 +44,8 @@ namespace DiceShow.App
             }
             else
             {
-               // cb.Register<DocumentDbRepository>(c=> new DocumentDbRepository("connectionString","databaseName")).As<IRepository>();
+                // cb.Register<DocumentDbRepository>(c=> new DocumentDbRepository("connectionString","databaseName")).As<IRepository>();
+                cb.Register<InMemoryRepository>(c => new InMemoryRepository("InMemoryRepository")).As<IRepository>();
             }
 
 
