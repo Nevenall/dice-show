@@ -71,14 +71,15 @@ call :ExecuteCmd nuget.exe sources Add -Name aspnetvnext -Source https://www.myg
 :: ignore errors for this command, the source may already be set, or may not.
 ::IF !ERRORLEVEL! NEQ 0 goto error
  
-
 :: 1. Restore nuget packages
 call :ExecuteCmd nuget.exe restore -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
 
 
 :: 2. Build and publish
-call :ExecuteCmd dotnet publish "DiceShow.App\project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release
+call :ExecuteCmd dotnet --info
+
+call :ExecuteCmd dotnet publish "DiceShow.App\project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release -v
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. KuduSync
