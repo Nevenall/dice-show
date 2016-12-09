@@ -1,61 +1,56 @@
-namespace DiceShow.Storage
-{
+namespace DiceShow.Storage {
 
-    using System.Collections.Generic;
-    using DiceShow.Model;
-    using System.Linq;
+	using System.Collections.Generic;
+	using DiceShow.Model;
+	using System.Linq;
+	using System.Threading.Tasks;
 
-    public class InMemoryRepository : IRepository
-    {
+	public class InMemoryRepository : IRepository {
 
-        Dictionary<string, DiceLog> _logs = new Dictionary<string, DiceLog>();
+		Dictionary<string, DiceLog> _logs = new Dictionary<string, DiceLog>();
 
-        Dictionary<string, List<Record>> _records = new Dictionary<string, List<Record>>();
-
-
-        /// Store logs, and maybe store the records as a tuple? 
-
-        public InMemoryRepository(string repositoryName)
-        {
-            CurrentRepository = repositoryName;
-        }
+		Dictionary<string, Dictionary<int, Record>> _records = new Dictionary<string, Dictionary<int, Record>>();
 
 
-        public string CurrentRepository { get; private set; }
+		public InMemoryRepository(string repositoryName) {
+			CurrentRepository = repositoryName;
+		}
 
 
-        public bool IsNameAvailable(string logName)
-        {
-
-            return !_logs.ContainsKey(logName);
-
-        }
+		public string CurrentRepository { get; private set; }
 
 
-        public DiceLog Get(string logName)
-        {
-            return _logs[logName];
+		public async Task<bool> IsNameAvailableAsync(string logName) {
+			return await Task.FromResult(!_logs.ContainsKey(logName));
+		}
 
-        }
 
-        public Record Get(string logName, int id)
-        {
-            return _records[logName].SingleOrDefault(el => el.Id == id);
-        }
+		public async Task<DiceLog> GetAsync(string logName) {
+			var ret = default(DiceLog);
+			_logs.TryGetValue(logName, out ret);
+			return await Task.FromResult(ret);
+		}
 
-        public void Store(DiceLog log)
-        {
-            _logs.Add(log.Name, log);
-            _records.Add(log.Name, new List<Record>());
+		public async Task<Record> GetAsync(string logName, int id) {
+			var ret = default(Record);
+			var records = default(Dictionary<int, Record>);
+			if(_records.TryGetValue(logName, out records)) {
+				records.TryGetValue(id, out ret);
+			}
+			return await Task.FromResult(ret);
+		}
 
-        }
-        public void Store(string logName, Record record)
-        {
-            _records[logName].Add(record);
+		public void Store(DiceLog log) {
+			_logs.Add(log.Name, log);
+			_records.Add(log.Name, new Dictionary<int, Record>< Record > ());
 
-        }
+		}
+		public void Store(string logName, Record record) {
+			_records[logName].Add(record);
+
+		}
 
 
 
-    }
+	}
 }
