@@ -32,11 +32,11 @@
     "jquery": "1.9.1 - 3",
     "tether": "^1.3.7"
   },
-  "_release": "c01fa6b369",
+  "_release": "eb40c2a747",
   "_resolution": {
     "type": "branch",
     "branch": "v4-dev",
-    "commit": "c01fa6b369dc751192ae0dfa5ba5beb2ea048e89"
+    "commit": "eb40c2a747f1f2f400f4ba38149d41b97dcab989"
   },
   "_source": "https://github.com/twbs/bootstrap.git",
   "_target": "v4-dev",
