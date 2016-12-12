@@ -4,6 +4,7 @@ namespace DiceShow.Storage {
 	using DiceShow.Model;
 	using System.Linq;
 	using System.Threading.Tasks;
+	using System;
 
 	public class InMemoryRepository : IRepository {
 
@@ -40,17 +41,33 @@ namespace DiceShow.Storage {
 			return await Task.FromResult(ret);
 		}
 
-		public void Store(DiceLog log) {
+		public async void StoreAsync(DiceLog log) {
 			_logs.Add(log.Name, log);
-			_records.Add(log.Name, new Dictionary<int, Record>< Record > ());
-
+			_records.Add(log.Name, new Dictionary<int, Record>());
+			await Task.Yield();
 		}
-		public void Store(string logName, Record record) {
-			_records[logName].Add(record);
-
+		public async void StoreAsync(string logName, Record record) {
+			var records = default(Dictionary<int, Record>);
+			if(_records.TryGetValue(logName, out records)) {
+				records.Add(record.Id, record);
+			}
+			await Task.Yield();
 		}
 
+		public Task<DiceLog> GetAysnc(string logName) {
+			return GetAsync(logName);
+		}
 
+		public Task<Record> GetAysnc(string logName, int id) {
+			return GetAsync(logName, id);
+		}
 
+		public void StoreAysnc(DiceLog log) {
+			StoreAsync(log);
+		}
+
+		public void StoreAysnc(string logName, Record record) {
+			StoreAsync(logName, record);
+		}
 	}
 }

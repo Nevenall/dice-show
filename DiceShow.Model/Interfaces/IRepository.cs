@@ -30,11 +30,8 @@ namespace DiceShow.Model {
 		Task<DiceLog> GetAysnc(string logName);
 		Task<Record> GetAysnc(string logName, int id);
 
-
-		void Store(DiceLog log);
-
-		void Store(string logName, Record record);
-
+		void StoreAysnc(DiceLog log);
+		void StoreAysnc(string logName, Record record);
 	}
 
 }

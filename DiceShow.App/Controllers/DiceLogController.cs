@@ -20,9 +20,8 @@ namespace DiceShow.App.Controllers {
 		/// <returns></returns>
 		[Route("log")]
 		public async Task<IActionResult> RedirectToHome() {
-			return Redirect("");
+			return await Task.FromResult(RedirectToActionPermanent("Index", "Home"));
 		}
-
 
 		/// Fetch the named log, if possible or return 404
 		[Route("log/{name}")]
