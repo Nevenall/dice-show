@@ -1,3 +1,4 @@
 {
-	"projects":["DiceShow.App", "DiceShow.Model", "DiceShow.Ops", "DiceShow.Storage", "DiceShow.Test"]
+	"projects":["DiceShow.App", "DiceShow.Model", "DiceShow.Ops", "DiceShow.Storage", "DiceShow.Test"],
+	"sdk": "1.0.0-preview2-1-003177"
 }
