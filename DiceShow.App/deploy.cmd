@@ -79,7 +79,7 @@ IF !ERRORLEVEL! NEQ 0 goto error
 :: 2. Build and publish
 call :ExecuteCmd dotnet --info
 
-call :ExecuteCmd dotnet publish "DiceShow.App\project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release -v
+call :ExecuteCmd dotnet publish "DiceShow.App\project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. KuduSync
