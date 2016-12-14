@@ -40,7 +40,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             "program": "${workspaceRoot}\\DiceShow.Ops\\bin\\Debug\\netcoreapp1.1\\DiceShow.Ops.dll",
-            "args": [ ],
+            "args": [],
             "cwd": "${workspaceRoot}\\DiceShow.Ops",
             "externalConsole": true,
             "stopAtEntry": false,
