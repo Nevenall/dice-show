@@ -1,6 +1,3 @@
-
-
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiceShow.App.Controllers
@@ -10,7 +7,7 @@ namespace DiceShow.App.Controllers
     {
 
         [Route("")]
-        public ActionResult Index()
+        public  ActionResult Index()
         {
             return View("Index");
         }
