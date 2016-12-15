@@ -76,8 +76,8 @@ call :ExecuteCmd nuget.exe restore -packagesavemode nuspec
 IF !ERRORLEVEL! NEQ 0 goto error
 
 
-:: 2. Build and publish
-call :ExecuteCmd dotnet --info
+REM :: 2. Build and publish
+REM call :ExecuteCmd dotnet --info
 
 call :ExecuteCmd dotnet publish "DiceShow.App\project.json" --output "%DEPLOYMENT_TEMP%" --configuration Release
 IF !ERRORLEVEL! NEQ 0 goto error
