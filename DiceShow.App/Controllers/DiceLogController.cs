@@ -38,11 +38,11 @@ namespace DiceShow.App.Controllers
             return View("DiceLog", new { Log = log, RollId = 0 });
         }
 
+
         [Route("log/{name}/{roll}")]
         public async Task<IActionResult> ShowDiceRoll(string name, int roll)
         {
             var log = await _repo.GetAysnc(name);
-
             if (log == null)
             {
                 return NotFound();

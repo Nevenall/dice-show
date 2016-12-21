@@ -17,7 +17,6 @@ namespace DiceShow.Storage {
 			CurrentRepository = repositoryName;
 		}
 
-
 		public string CurrentRepository { get; private set; }
 
 

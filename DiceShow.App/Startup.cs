@@ -9,18 +9,17 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using DiceShow.Model;
 using DiceShow.Storage;
+using System.Linq;
 
 namespace DiceShow.App
 {
 
-    using System.Linq;
     public class Startup
     {
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             var env = services.SingleOrDefault(d => d.ServiceType == typeof(IHostingEnvironment)).ImplementationInstance as IHostingEnvironment;
-
 
             services.AddSignalR(options =>
             {
@@ -47,7 +46,6 @@ namespace DiceShow.App
                 // cb.Register<DocumentDbRepository>(c=> new DocumentDbRepository("connectionString","databaseName")).As<IRepository>();
                 cb.Register<InMemoryRepository>(c => new InMemoryRepository("InMemoryRepository")).As<IRepository>();
             }
-
 
             cb.Populate(services);
             var container = cb.Build();
