@@ -89,6 +89,10 @@ public partial class DiceParser : Parser {
 
 	public override string SerializedAtn { get { return _serializedATN; } }
 
+	  
+		public const string GrammarVersion = "0.1.0";
+		public const string VersionReleaseNotes = @"";
+
 	public DiceParser(ITokenStream input)
 		: base(input)
 	{

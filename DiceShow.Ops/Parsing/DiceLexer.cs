@@ -38,6 +38,10 @@ public partial class DiceLexer : Lexer {
 		"T__0", "T__1", "ID", "SEPARATOR", "INT"
 	};
 
+	  
+		public const string GrammarVersion = "0.1.0";
+		public const string VersionReleaseNotes = @"";
+
 
 	public DiceLexer(ICharStream input)
 		: base(input)
