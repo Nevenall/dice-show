@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace DiceShow.App
 {
@@ -8,12 +9,15 @@ namespace DiceShow.App
 
 		public static void Main(string[] args)
 		{
+			
+
+
 			var host = new WebHostBuilder()
 				 .UseContentRoot(Directory.GetCurrentDirectory())
+				 .UseStartup<Startup>()
 				 .UseIISIntegration()
 				 .UseKestrel()
-				 .UseStartup<Startup>()
-				 .Build();
+			  	 .Build();
 
 			host.Run();
 		}

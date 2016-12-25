@@ -6,15 +6,6 @@
     "preserveCompilationContext": true
   },
   "dependencies": {
-    // "Autofac": "4.0.0-*",
-    // "Autofac.Extensions.DependencyInjection": "4.0.0-*",
-    // "Microsoft.AspNet.SignalR.JS": "2.2.1",
-    // "Microsoft.AspNetCore": "1.1.0-*",
-    // "Microsoft.AspNetCore.Mvc": "1.1.0-*",
-    // "Microsoft.AspNetCore.Owin": "1.1.0-*",
-    // "Microsoft.AspNetCore.StaticFiles": "1.1.0-*",
-    // "Microsoft.AspNetCore.SignalR.Server": "0.2.0-*",
-    // "Microsoft.AspNetCore.WebSockets": "0.2.0-*"
     "Autofac": "*",
     "Autofac.Extensions.DependencyInjection": "*",
     "Microsoft.AspNetCore": "*",
@@ -24,8 +15,8 @@
     "Microsoft.AspNet.SignalR.JS": "*",
     "Microsoft.AspNetCore.SignalR.Server": "0.2.0-*",
     "Microsoft.AspNetCore.WebSockets": "*",
-    // "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.1.0-*",
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0"
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.1.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "*"
   },
   "frameworks": {
     "netcoreapp1.1": {

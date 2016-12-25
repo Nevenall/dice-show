@@ -4,25 +4,21 @@ namespace DiceShow.Model {
 
 	public interface IRepository {
 
-		// I will have an observable of Rolls. Maybe statements, whatever the eventual  type that we store will be. 
-		// there will be some changes because the stored type will contain the 
+		/*
+		repo dev notes
 
-		// test a name for a new DiceLog 
-		// Create a new DiceLog, with name and id
-		// Get a DiceLog by id 
-		// Get the rolls for a dice log. Rolls or statements? or requests? 
-		// what do we can the whole structure of the user imput, the maybe parsed dice roll, and the results
-		// and any errors that might have happened?
-		// If we are making a dice log, then maybe the overarching entity is called an Entry? 
-		// that's pretty logical. 
-		// Entry, or LogEntry?  
+		so, we can look at how we want to actually use the repo, 
+		and sync that up with how db storage actually works. 
 
+		how we want to use it
+		most of what we will do is load a dice log 
+		and display things about it, like the name and the records associatd with it that have resulted in a roll
+		those that fail to parse we don't generallty show. 
+		
+		So, once we have retrieved the initial records, we only store 
+		the updated rolls will actually come through a different channel. that's important to remember,
 
-		// create a dice log
-		// Record id are strings or ints? 
-		// we can use 
-		// 
-
+		*/
 		string CurrentRepository { get; }
 
 		Task<bool> IsNameAvailableAsync(string logName);
