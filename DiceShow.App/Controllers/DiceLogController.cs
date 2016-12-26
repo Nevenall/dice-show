@@ -39,22 +39,22 @@ namespace DiceShow.App.Controllers
 		}
 
 
-	[Route("log/{name}/{roll}")]
-	public async Task<IActionResult> ShowDiceRoll(string name, int roll)
-	{
-		var log = await _repo.GetAysnc(name);
-        var record = await _repo.GetAysnc(name, roll);
-
-		if (log == null)
+		[Route("log/{name}/{roll}")]
+		public async Task<IActionResult> ShowDiceRoll(string name, int roll)
 		{
-			return NotFound();
+			var log = await _repo.GetAysnc(name); 
+			var record = await _repo.GetAysnc(name, roll);
+
+			if (log == null)
+			{
+				return NotFound();
+			}
+			/// directing to a new view, not sure if that's the thing that we want right now. 
+			/// rolls are displayed as a separate thing. we can navigate back to the log from their
+			return View("DiceRoll", record);
+
 		}
-		/// directing to a new view, not sure if that's the thing that we want right now. 
-        /// rolls are displayed as a separate thing. we can navigate back to the log from their
-        return View("DiceRoll", new { Log = log, RollId = roll });
+
 
 	}
-
-
-}
 }

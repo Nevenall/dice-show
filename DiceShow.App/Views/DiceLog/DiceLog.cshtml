@@ -1,28 +1,15 @@
-<h2>@ViewBag.LogName</h2>
-<h3>@ViewBag.Roll</h3>
+@model DiceShow.Model.DiceLog
 
 <div id="dice-app">
-	
-<!--we have a log id to use for retreiving from the hub
-what if we allow for the
-we might have a rollid to focus to, the trick is when will tht roll be loaded?
-unless we can pass data to the view as we create it, 
-we already retrieve the log so, the the view can immediately display some set of data
 
-if we allow the log owner to do management tasks like, archive all rolls before selected roll, then that would be cool. 
-
-and then the log can be responsive as it loads 
+	<h2>@Model.Name</h2>
 
 
-if we connect our webclient data to the hub, then it loads as it loads and we can
-show it. that makes focusing to the selected roll tricky. 
-the alternate is that we can actually go directly to the roll. 
-if you want to see it, then you retrieve it and load it and send it to it's own little view. 
-I think that will work better then trying to wait for the roll to load and then focusing it. 
 
-The dice log view is 
-
-
+<!--
+	and now we display the records from this log, 
+	info about who's connected and what's up
+	and
 -->
 
 </div>
