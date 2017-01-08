@@ -6,14 +6,9 @@
     "tasks": [
         {
             "taskName": "build",
-            "args": [
-                "${workspaceRoot}\\DiceShow.Model\\project.json",
-                "${workspaceRoot}\\DiceShow.Ops\\project.json",
-                "${workspaceRoot}\\DiceShow.Storage\\project.json",
-                "${workspaceRoot}\\DiceShow.App\\project.json",
-                "${workspaceRoot}\\DiceShow.Test\\project.json"
-            ],
+            "args": [ "${workspaceRoot}\\DiceShow.App\\DiceShow.App.csproj" ],
             "isBuildCommand": true,
+            "showOutput": "silent",
             "problemMatcher": "$msCompile"
         },
         {
@@ -21,7 +16,6 @@
             "args": [
                 "${workspaceRoot}\\DiceShow.Test\\project.json"
             ],
-            "isBuildCommand": false,
             "isTestCommand": true
         }
     ]

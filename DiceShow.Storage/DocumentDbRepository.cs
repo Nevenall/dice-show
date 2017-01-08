@@ -6,7 +6,6 @@ namespace DiceShow.Storage
     using System.Linq;
     using Microsoft.Extensions.Configuration;
     using Newtonsoft.Json;
-    using Flurl.Http;
     using Flurl;
     using System.Threading.Tasks;
     using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace DiceShow.Storage
     using System.Net;
     using System.Text.Encodings.Web;
     using DiceShow.Storage.Models;
-    public class DocumentDbRepository
+    public class DocumentDbRepository 
     //: IRepository
     {
 
