@@ -5,7 +5,7 @@
     "emitEntryPoint": true
   },
   "dependencies": {
-    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.1.0-*",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.2.0-*",
     "Newtonsoft.Json": "*",
     "Flurl.Http": "*",
     "System.Text.Encodings.Web": "*"
