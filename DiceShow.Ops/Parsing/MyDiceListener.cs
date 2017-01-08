@@ -16,9 +16,6 @@ namespace DiceShow.Ops.Parsing
 
         public Collection<IErrorNode> Errors { get; set; } = new Collection<IErrorNode>();
 
-
-
-
         public void EnterEveryRule(ParserRuleContext context)
         {
 
@@ -40,7 +37,7 @@ namespace DiceShow.Ops.Parsing
 
         public void EnterStatement([NotNull] DiceParser.StatementContext context)
         {
-            Statement = new Statement { };
+            Statement = new Statement();
         }
 
         public void ExitStatement([NotNull] DiceParser.StatementContext context)

@@ -1,17 +1,12 @@
 {
     "version": "0.1.0",
-    "command": "cmd",
+    "command": "dotnet",
     "isShellCommand": true,
-    "args": [
-        "/C"
-    ],
-    "echoCommand": true,
+    "args": [],
     "tasks": [
         {
             "taskName": "build",
-            "suppressTaskName": true,
             "args": [
-                "dotnet build",
                 "${workspaceRoot}\\DiceShow.App\\DiceShow.App.csproj"
             ],
             "isBuildCommand": true,
@@ -20,20 +15,10 @@
         },
         {
             "taskName": "test",
-            "suppressTaskName": true,
             "args": [
-                "dotnet test",
                 "${workspaceRoot}\\DiceShow.Test\\DiceShow.Test.csproj"
             ],
             "isTestCommand": true
-        },
-        {
-            "taskName": "antlr",
-            "suppressTaskName": true,
-            "args": [
-                "pushd ${workspaceRoot}\\DiceShow.Ops\\Parsing & antlr Dice.g4 -package DiceShow.Ops.Parsing.Internal & echo DONE"
-            ],
-            "showOutput": "silent"
         }
     ]
 }

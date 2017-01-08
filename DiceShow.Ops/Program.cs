@@ -8,8 +8,6 @@ namespace DiceShow.Ops
     {
         public static void Main(string[] args)
         {
-
-            /// make a parse repl
             do
             {
                 Console.Write("DiceShow> ");
