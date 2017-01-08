@@ -24,27 +24,12 @@ bld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
 # remove non-dist bower libraries
-DiceShow.App/wwwroot/lib/*/grunt
-DiceShow.App/wwwroot/lib/*/js
-DiceShow.App/wwwroot/lib/*/nuget
-DiceShow.App/wwwroot/lib/*/scss
-DiceShow.App/wwwroot/lib/*/external
-DiceShow.App/wwwroot/lib/*/src
-DiceShow.App/wwwroot/lib/*/docs
-DiceShow.App/wwwroot/lib/*/examples
-DiceShow.App/wwwroot/lib/*/.github
-DiceShow.App/wwwroot/lib/*/benchmarks
-DiceShow.App/wwwroot/lib/*/build
-DiceShow.App/wwwroot/lib/*/examples
-DiceShow.App/wwwroot/lib/*/flow
-DiceShow.App/wwwroot/lib/*/packages
-DiceShow.App/wwwroot/lib/*/src
-DiceShow.App/wwwroot/lib/*/test
-DiceShow.App/wwwroot/lib/*/types
+DiceShow.App/node_modules
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
