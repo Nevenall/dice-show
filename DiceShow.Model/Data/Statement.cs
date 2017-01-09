@@ -7,12 +7,7 @@ namespace DiceShow.Model
 	///
 	public class Statement
 	{
-		public Statement()
-		{
-			Dice = new Collection<Dice>();
-		}
-
-		public Collection<Dice> Dice { get; set; }
+		public Collection<Dice> Dice { get; set; } = new Collection<Dice>();
 
 		public override string ToString()
 		{

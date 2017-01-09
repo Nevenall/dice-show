@@ -6,7 +6,7 @@ namespace DiceShow.Model
 	using System.Linq;
 
 
-	public class Result
+	public class MyResult
 	{
 		public IEnumerable<RolledDice> RolledDice { get; set; }
 			

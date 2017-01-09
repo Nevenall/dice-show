@@ -31,9 +31,9 @@
             "taskName": "antlr",
             "suppressTaskName": true,
             "args": [
-                "pushd ${workspaceRoot}\\DiceShow.Ops\\Parsing & antlr Dice.g4 -package DiceShow.Ops.Parsing.Internal & echo DONE"
+                "pushd ${workspaceRoot}\\DiceShow.Ops\\Parsing & antlr Dice.g4 -package DiceShow.Ops.Parsing.Internal -visitor & echo DONE"
             ],
-            "showOutput": "silent"
+            "showOutput": "always"
         }
     ]
 }

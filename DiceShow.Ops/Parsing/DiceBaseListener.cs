@@ -36,6 +36,156 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class DiceBaseListener : IDiceListener {
 	/// <summary>
+	/// Enter a parse tree produced by the <c>Hit</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterHit([NotNull] DiceParser.HitContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Hit</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitHit([NotNull] DiceParser.HitContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Count</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterCount([NotNull] DiceParser.CountContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Count</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitCount([NotNull] DiceParser.CountContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Drop</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDrop([NotNull] DiceParser.DropContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Drop</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDrop([NotNull] DiceParser.DropContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Explode</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExplode([NotNull] DiceParser.ExplodeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Explode</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExplode([NotNull] DiceParser.ExplodeContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>AddScalar</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAddScalar([NotNull] DiceParser.AddScalarContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>AddScalar</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAddScalar([NotNull] DiceParser.AddScalarContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Reroll</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReroll([NotNull] DiceParser.RerollContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Reroll</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReroll([NotNull] DiceParser.RerollContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>AddDiceExp</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAddDiceExp([NotNull] DiceParser.AddDiceExpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>AddDiceExp</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAddDiceExp([NotNull] DiceParser.AddDiceExpContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>SubScalar</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSubScalar([NotNull] DiceParser.SubScalarContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>SubScalar</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSubScalar([NotNull] DiceParser.SubScalarContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Keep</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterKeep([NotNull] DiceParser.KeepContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Keep</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitKeep([NotNull] DiceParser.KeepContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>SubDiceExp</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSubDiceExp([NotNull] DiceParser.SubDiceExpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>SubDiceExp</c>
+	/// labeled alternative in <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSubDiceExp([NotNull] DiceParser.SubDiceExpContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -60,6 +210,45 @@ public partial class DiceBaseListener : IDiceListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDice([NotNull] DiceParser.DiceContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterExpression([NotNull] DiceParser.ExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="DiceParser.expression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitExpression([NotNull] DiceParser.ExpressionContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="DiceParser.diceExp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDiceExp([NotNull] DiceParser.DiceExpContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="DiceParser.diceExp"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDiceExp([NotNull] DiceParser.DiceExpContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterTarget([NotNull] DiceParser.TargetContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitTarget([NotNull] DiceParser.TargetContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

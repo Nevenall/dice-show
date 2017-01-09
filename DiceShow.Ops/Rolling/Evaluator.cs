@@ -21,7 +21,7 @@ namespace DiceShow.Ops.Rolling
 
 			try
 			{
-				ret.Result = new Result();
+				ret.Result = new MyResult();
 				ret.Result.RolledDice = from d in statement.Dice
 												select new RolledDice
 												{
