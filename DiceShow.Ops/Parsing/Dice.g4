@@ -3,6 +3,7 @@
 // Don't forget to invoke bat file with -package DiceShow.Ops.Parsing.Internal
 
 grammar Dice;
+
 options { language=CSharp_v4_5; }
 
 @members {  
@@ -15,10 +16,10 @@ options { language=CSharp_v4_5; }
 	";
 }
 
-statement: dice (SEPARATOR+ dice)*;
+statement: dice+;
 // actually, fudge dice should be rolled as 4f or 2f, the sides are already defined
 
-dice: ID? INT ('d'|'D') INT (expression)?;
+dice: ID? INT ('d' | 'D') INT expression?;
 
 expression: 
 	PLUS INT						# AddScalar
@@ -33,7 +34,7 @@ expression:
 	| HIT INT (PLUS|MINUS) 	# Hit
 ;
 
-diceExp: INT ('d'|'D') INT;
+diceExp: INT ('d' | 'D') INT;
 
 target: 
 // consider making the int for target optional. 
@@ -43,13 +44,6 @@ target:
 	| HIGHEST
 ;
 
-ID: [a-zA-Z]+;
-SEPARATOR: [, ];
-INT: [0-9]+;
-PLUS: '+';
-PLUSPLUS: '++';
-MINUS: '-';
-MINUSMINUS: '--';
 DROP: 'drop' | 'Drop' | 'DROP';
 KEEP: 'keep' | 'Keep' | 'KEEP';
 COUNT: 'count' | 'Count' | 'COUNT';
@@ -58,3 +52,10 @@ EXPLODE: 'explode' | 'Explode' | 'EXPLODE';
 HIT: 'hit' | 'Hit' | 'HIT';
 LOWEST: 'lowest' | 'Lowest' | 'LOWEST';
 HIGHEST: 'highest' | 'Highest' | 'HIGHEST';
+ID: [a-zA-Z]+;
+INT: [0-9]+;
+PLUS: '+';
+PLUSPLUS: '++';
+MINUS: '-';
+MINUSMINUS: '--';
+WS : [, \r\t\n]+ -> skip;
