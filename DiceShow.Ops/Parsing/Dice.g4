@@ -58,4 +58,4 @@ PLUS: '+';
 PLUSPLUS: '++';
 MINUS: '-';
 MINUSMINUS: '--';
-WS : [, \r\t\n]+ -> skip;
+WS : [:;, \r\t\n]+ -> skip;

@@ -140,7 +140,8 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterDrop([NotNull] DiceParser.DropContext context)
 		{
-			var s ="";
+			var s = "";
+			
 		}
 
 		public void ExitDrop([NotNull] DiceParser.DropContext context)
@@ -200,7 +201,11 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterTarget(DiceParser.TargetContext context)
 		{
-
+			// so do we have the specific expression type, work out the target rule.
+			// or do we push the expression on the stack where this listener can add the target info?
+			// what does target info look like? 
+			// is it a part of some expression base class?
+			// m
 		}
 
 		public void ExitTarget(DiceParser.TargetContext context)
