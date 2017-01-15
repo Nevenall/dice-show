@@ -186,6 +186,51 @@ public partial class DiceBaseListener : IDiceListener {
 	public virtual void ExitSubDiceExp([NotNull] DiceParser.SubDiceExpContext context) { }
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>Lowest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterLowest([NotNull] DiceParser.LowestContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Lowest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitLowest([NotNull] DiceParser.LowestContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>TargetInt</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterTargetInt([NotNull] DiceParser.TargetIntContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>TargetInt</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitTargetInt([NotNull] DiceParser.TargetIntContext context) { }
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Highest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterHighest([NotNull] DiceParser.HighestContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Highest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitHighest([NotNull] DiceParser.HighestContext context) { }
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

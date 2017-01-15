@@ -11,6 +11,8 @@ namespace DiceShow.Model
 		// so, expressions inform the way we evaluate rolls
 		// and then 
 
+		Target Target { get; set; }
+
 	}
 
 }

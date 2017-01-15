@@ -39,10 +39,10 @@ diceExp: INT ('d' | 'D') INT;
 target: 
 // consider making the int for target optional. 
 // if there's no INT then the target is either the highest or lowest 
-	INT (PLUS | MINUS | PLUSPLUS | MINUSMINUS)
-	| LOWEST
-	| HIGHEST
-;
+	INT (PLUS | MINUS | PLUSPLUS | MINUSMINUS) # TargetInt
+	| LOWEST												 # Lowest
+	| HIGHEST											 # Highest
+;	
 
 DROP: 'drop' | 'Drop' | 'DROP';
 KEEP: 'keep' | 'Keep' | 'KEEP';

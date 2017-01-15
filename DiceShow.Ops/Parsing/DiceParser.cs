@@ -129,6 +129,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitStatement(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitStatement(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -186,6 +191,11 @@ public partial class DiceParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitDice(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDice(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -261,6 +271,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitHit(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitHit(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class CountContext : ExpressionContext {
 		public ITerminalNode COUNT() { return GetToken(DiceParser.COUNT, 0); }
@@ -275,6 +290,11 @@ public partial class DiceParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitCount(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitCount(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class DropContext : ExpressionContext {
@@ -291,6 +311,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitDrop(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDrop(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class ExplodeContext : ExpressionContext {
 		public ITerminalNode EXPLODE() { return GetToken(DiceParser.EXPLODE, 0); }
@@ -306,6 +331,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitExplode(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitExplode(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class AddScalarContext : ExpressionContext {
 		public ITerminalNode PLUS() { return GetToken(DiceParser.PLUS, 0); }
@@ -318,6 +348,11 @@ public partial class DiceParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitAddScalar(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAddScalar(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class RerollContext : ExpressionContext {
@@ -334,6 +369,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitReroll(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitReroll(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class AddDiceExpContext : ExpressionContext {
 		public ITerminalNode PLUS() { return GetToken(DiceParser.PLUS, 0); }
@@ -349,6 +389,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitAddDiceExp(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitAddDiceExp(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class SubScalarContext : ExpressionContext {
 		public ITerminalNode MINUS() { return GetToken(DiceParser.MINUS, 0); }
@@ -361,6 +406,11 @@ public partial class DiceParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitSubScalar(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSubScalar(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 	public partial class KeepContext : ExpressionContext {
@@ -377,6 +427,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitKeep(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitKeep(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 	public partial class SubDiceExpContext : ExpressionContext {
 		public ITerminalNode MINUS() { return GetToken(DiceParser.MINUS, 0); }
@@ -391,6 +446,11 @@ public partial class DiceParser : Parser {
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitSubDiceExp(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitSubDiceExp(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -530,6 +590,11 @@ public partial class DiceParser : Parser {
 			IDiceListener typedListener = listener as IDiceListener;
 			if (typedListener != null) typedListener.ExitDiceExp(this);
 		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitDiceExp(this);
+			else return visitor.VisitChildren(this);
+		}
 	}
 
 	[RuleVersion(0)]
@@ -563,25 +628,70 @@ public partial class DiceParser : Parser {
 	}
 
 	public partial class TargetContext : ParserRuleContext {
-		public ITerminalNode INT() { return GetToken(DiceParser.INT, 0); }
-		public ITerminalNode PLUS() { return GetToken(DiceParser.PLUS, 0); }
-		public ITerminalNode MINUS() { return GetToken(DiceParser.MINUS, 0); }
-		public ITerminalNode PLUSPLUS() { return GetToken(DiceParser.PLUSPLUS, 0); }
-		public ITerminalNode MINUSMINUS() { return GetToken(DiceParser.MINUSMINUS, 0); }
-		public ITerminalNode LOWEST() { return GetToken(DiceParser.LOWEST, 0); }
-		public ITerminalNode HIGHEST() { return GetToken(DiceParser.HIGHEST, 0); }
 		public TargetContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_target; } }
+	 
+		public TargetContext() { }
+		public virtual void CopyFrom(TargetContext context) {
+			base.CopyFrom(context);
+		}
+	}
+	public partial class LowestContext : TargetContext {
+		public ITerminalNode LOWEST() { return GetToken(DiceParser.LOWEST, 0); }
+		public LowestContext(TargetContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.EnterTarget(this);
+			if (typedListener != null) typedListener.EnterLowest(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IDiceListener typedListener = listener as IDiceListener;
-			if (typedListener != null) typedListener.ExitTarget(this);
+			if (typedListener != null) typedListener.ExitLowest(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitLowest(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class TargetIntContext : TargetContext {
+		public ITerminalNode INT() { return GetToken(DiceParser.INT, 0); }
+		public ITerminalNode PLUS() { return GetToken(DiceParser.PLUS, 0); }
+		public ITerminalNode MINUS() { return GetToken(DiceParser.MINUS, 0); }
+		public ITerminalNode PLUSPLUS() { return GetToken(DiceParser.PLUSPLUS, 0); }
+		public ITerminalNode MINUSMINUS() { return GetToken(DiceParser.MINUSMINUS, 0); }
+		public TargetIntContext(TargetContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.EnterTargetInt(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.ExitTargetInt(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitTargetInt(this);
+			else return visitor.VisitChildren(this);
+		}
+	}
+	public partial class HighestContext : TargetContext {
+		public ITerminalNode HIGHEST() { return GetToken(DiceParser.HIGHEST, 0); }
+		public HighestContext(TargetContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.EnterHighest(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IDiceListener typedListener = listener as IDiceListener;
+			if (typedListener != null) typedListener.ExitHighest(this);
+		}
+		public override TResult Accept<TResult>(IParseTreeVisitor<TResult> visitor) {
+			IDiceVisitor<TResult> typedVisitor = visitor as IDiceVisitor<TResult>;
+			if (typedVisitor != null) return typedVisitor.VisitHighest(this);
+			else return visitor.VisitChildren(this);
 		}
 	}
 
@@ -594,6 +704,7 @@ public partial class DiceParser : Parser {
 			State = 55;
 			switch (_input.La(1)) {
 			case INT:
+				_localctx = new TargetIntContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 51; Match(INT);
@@ -607,12 +718,14 @@ public partial class DiceParser : Parser {
 				}
 				break;
 			case LOWEST:
+				_localctx = new LowestContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 53; Match(LOWEST);
 				}
 				break;
 			case HIGHEST:
+				_localctx = new HighestContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 54; Match(HIGHEST);

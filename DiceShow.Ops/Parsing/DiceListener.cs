@@ -162,6 +162,45 @@ public interface IDiceListener : IParseTreeListener {
 	void ExitSubDiceExp([NotNull] DiceParser.SubDiceExpContext context);
 
 	/// <summary>
+	/// Enter a parse tree produced by the <c>Lowest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterLowest([NotNull] DiceParser.LowestContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Lowest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitLowest([NotNull] DiceParser.LowestContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>TargetInt</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterTargetInt([NotNull] DiceParser.TargetIntContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>TargetInt</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitTargetInt([NotNull] DiceParser.TargetIntContext context);
+
+	/// <summary>
+	/// Enter a parse tree produced by the <c>Highest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterHighest([NotNull] DiceParser.HighestContext context);
+	/// <summary>
+	/// Exit a parse tree produced by the <c>Highest</c>
+	/// labeled alternative in <see cref="DiceParser.target"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitHighest([NotNull] DiceParser.HighestContext context);
+
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="DiceParser.statement"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
