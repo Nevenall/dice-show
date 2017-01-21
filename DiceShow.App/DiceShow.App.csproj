@@ -16,7 +16,6 @@
     <ProjectReference Include="..\DiceShow.Model\DiceShow.Model.csproj" />
     <ProjectReference Include="..\DiceShow.Ops\DiceShow.Ops.csproj" />
     <ProjectReference Include="..\DiceShow.Storage\DiceShow.Storage.csproj" />
-    <!--<PackageReference Include="Microsoft.NETCore.App" Version="1.0.1" />-->
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.2.1" />
