@@ -216,10 +216,15 @@ namespace DiceShow.Ops.Parsing
 			var exp = _dice.Peek().Expression;
 			var target = new Target();
 			target.Number = Convert.ToInt32(context.INT());
-			
-			
 
+			var plus = context.PLUS();
+			var plusplus = context.PLUSPLUS();
 
+			/// if plus or plus plus are not null then the target is a greater then or equal to
+			/// if plusplus is not null, then the expression is recussive what ever it may be\
+			/// if it's an explode then the dice will explode as long as they keep hitting the number. 
+
+			
 		}
 
 		public void ExitTargetInt(DiceParser.TargetIntContext context)
@@ -230,6 +235,7 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterLowest(DiceParser.LowestContext context)
 		{
+
 
 
 		}
