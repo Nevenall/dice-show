@@ -1,3 +1,4 @@
+
 // Define a grammar called Dice
 // Dice grammar starts with only a single label and dice spec
 // Don't forget to invoke bat file with -package DiceShow.Ops.Parsing.Internal
