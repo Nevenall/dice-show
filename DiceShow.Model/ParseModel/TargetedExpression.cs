@@ -2,7 +2,7 @@ using System;
 
 namespace DiceShow.Model
 {
-	public class DropExpression : IExpression
+	public class TargetedExpression : IExpression
 	{
 		public Target Target
 		{

@@ -140,15 +140,17 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterDrop([NotNull] DiceParser.DropContext context)
 		{
-			var exp = new DropExpression();
+			var exp = new TargetedExpression();
 			_dice.Peek().Expression = exp;
 		}
 
 		public void ExitDrop([NotNull] DiceParser.DropContext context)
 		{
+			
 		}
 		public void EnterKeep([NotNull] DiceParser.KeepContext context)
 		{
+
 		}
 
 		public void ExitKeep([NotNull] DiceParser.KeepContext context)
@@ -187,8 +189,6 @@ namespace DiceShow.Ops.Parsing
 		{
 		}
 
-
-
 		public void EnterDiceExp(DiceParser.DiceExpContext context)
 		{
 
@@ -201,8 +201,7 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterTarget(DiceParser.TargetContext context)
 		{
-
-
+			// noop
 		}
 
 		public void ExitTarget(DiceParser.TargetContext context)
@@ -213,18 +212,20 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterTargetInt(DiceParser.TargetIntContext context)
 		{
-			var exp = _dice.Peek().Expression;
 			var target = new Target();
-			target.Number = Convert.ToInt32(context.INT());
+			target.Number = Convert.ToInt32(context.INT().Symbol.Text);
 
 			var plus = context.PLUS();
 			var plusplus = context.PLUSPLUS();
 
-			/// if plus or plus plus are not null then the target is a greater then or equal to
-			/// if plusplus is not null, then the expression is recussive what ever it may be\
-			/// if it's an explode then the dice will explode as long as they keep hitting the number. 
+			var minus = context.MINUS();
+			var minusminus = context.MINUSMINUS();
 
-			
+			target.GreaterThanOrEqual = plus != null || plusplus != null;
+			target.LessThanOrEqual = minus != null || minusminus != null;
+			target.OpenEnded = plusplus != null || minusminus != null;
+
+			_dice.Peek().Expression.Target = target;
 		}
 
 		public void ExitTargetInt(DiceParser.TargetIntContext context)
@@ -235,9 +236,9 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterLowest(DiceParser.LowestContext context)
 		{
-
-
-
+			var target = new Target();
+			target.Lowest = true;
+			_dice.Peek().Expression.Target = target;
 		}
 
 		public void ExitLowest(DiceParser.LowestContext context)
@@ -247,8 +248,9 @@ namespace DiceShow.Ops.Parsing
 
 		public void EnterHighest(DiceParser.HighestContext context)
 		{
-
-
+			var target = new Target();
+			target.Highest = true;
+			_dice.Peek().Expression.Target = target;
 		}
 
 		public void ExitHighest(DiceParser.HighestContext context)
