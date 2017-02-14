@@ -6,16 +6,10 @@
     <AssemblyName>DiceShow.Test</AssemblyName>
     <PackageId>DiceShow.Test</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);dotnet5.4;portable-net451+win8</PackageTargetFallback>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="**\*.cs" />
-    <EmbeddedResource Include="**\*.resx" Exclude="@(EmbeddedResource)" />
-    <EmbeddedResource Include="compiler\resources\**\*" Exclude="@(EmbeddedResource)" />
-  </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
+  <ItemGroup >
     <ProjectReference Include="..\DiceShow.Model\DiceShow.Model.csproj" />
     <ProjectReference Include="..\DiceShow.Ops\DiceShow.Ops.csproj" />
     <ProjectReference Include="..\DiceShow.Storage\DiceShow.Storage.csproj" />
@@ -30,8 +24,5 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0-beta4-build1194" />
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
-  </PropertyGroup>
-
+  
 </Project>
