@@ -13,8 +13,12 @@
         },
         {
             "taskName": "test",
-            "command": "dotnet test",
-            "isTestCommand": true
+            "echoCommand": true,
+            // "command": "echo ${workspaceRoot}",
+            "command": "dotnet test ${workspaceRoot}\\DiceShow.Test\\DiceShow.Test.csproj",
+            //   "command": "dotnet test ${workspaceRoot}\\DiceShow.Test\\bin\\Debug\\netcoreapp1.0\\DiceShow.Test.dll",
+            "isTestCommand": true,
+            "showOutput": "always"
         },
         {
             "taskName": "antlr",

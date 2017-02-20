@@ -10,7 +10,6 @@ namespace DiceShow.Tests
 	{
 
 		[Theory]
-
 		[InlineData("2d6", "2d6")]
 		[InlineData("2D6", "2d6")]
 		[InlineData("str 3d6 dex 3d6", "str 3d6, dex 3d6")]

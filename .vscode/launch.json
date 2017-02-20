@@ -1,68 +1,52 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Launch Website",
-            "logging": {
-                "exceptions": true,
-                "programOutput": true,
-                "trace": true
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Parser",
+         "type": "coreclr",
+         "request": "launch",
+         "preLaunchTask": "build",
+         "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/DiceShow.Ops.dll",
+         "args": [],
+         "cwd": "${workspaceRoot}",
+         "stopAtEntry": false,
+         "externalConsole": false
+      },
+      {
+         "name": ".NET Core Launch (web)",
+         "type": "coreclr",
+         "request": "launch",
+         "preLaunchTask": "build",
+         "program": "${workspaceRoot}/bin/Debug/<target-framework>/<project-name.dll>",
+         "args": [],
+         "cwd": "${workspaceRoot}",
+         "stopAtEntry": false,
+         "launchBrowser": {
+            "enabled": true,
+            "args": "${auto-detect-url}",
+            "windows": {
+               "command": "cmd.exe",
+               "args": "/C start ${auto-detect-url}"
             },
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\DiceShow.App\\bin\\Debug\\netcoreapp1.0\\DiceShow.App.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}\\DiceShow.App",
-            "externalConsole": false,
-            "stopAtEntry": false,
-            "launchBrowser": {
-                "enabled": true,
-                "args": "${auto-detect-url}",
-                "windows": {
-                    "command": "cmd.exe",
-                    "args": "/C start ${auto-detect-url}"
-                },
-                "osx": {
-                    "command": "open"
-                },
-                "linux": {
-                    "command": "xdg-open"
-                }
+            "osx": {
+               "command": "open"
             },
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "development"
+            "linux": {
+               "command": "xdg-open"
             }
-        },
-        {
-            "name": "Launch Parser",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\DiceShow.Ops\\bin\\Debug\\netcoreapp1.0\\DiceShow.Ops.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}\\DiceShow.Ops",
-            "externalConsole": true,
-            "stopAtEntry": false,
-            "env": {}
-        },
-        {
-            "name": "Launch Storage",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}\\DiceShow.Storage\\bin\\Debug\\netcoreapp1.0\\DiceShow.Storage.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}\\DiceShow.Storage",
-            "externalConsole": true,
-            "stopAtEntry": false,
-            "env": {}
-        },
-        {
-            "name": "Attach",
-            "type": "coreclr",
-            "request": "attach",
-            "processId": "${command.pickProcess}"
-        }
-    ]
+         },
+         "env": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+         },
+         "sourceFileMap": {
+            "/Views": "${workspaceRoot}/Views"
+         }
+      },
+      {
+         "name": ".NET Core Attach",
+         "type": "coreclr",
+         "request": "attach",
+         "processId": "${command.pickProcess}"
+      }
+   ]
 }
