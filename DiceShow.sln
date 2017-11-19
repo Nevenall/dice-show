@@ -7,7 +7,7 @@ Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "DiceShow.App", "DiceShow.Ap
 EndProject
 Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "DiceShow.Model", "DiceShow.Model\DiceShow.Model.csproj", "{796D754E-5340-4D2E-B1E6-9DAAAAB6FC94}"
 EndProject
-Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "DiceShow.Ops", "diceshow.ops\DiceShow.Ops.csproj", "{3E9AB06D-FEA8-474A-8F69-AC6DAB2A1A3B}"
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "DiceShow.Ops", "DiceShow.Ops\DiceShow.Ops.csproj", "{3E9AB06D-FEA8-474A-8F69-AC6DAB2A1A3B}"
 EndProject
 Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "DiceShow.Storage", "DiceShow.Storage\DiceShow.Storage.csproj", "{CEBB9FB6-8649-440E-9488-27D9FF4B1CE1}"
 EndProject

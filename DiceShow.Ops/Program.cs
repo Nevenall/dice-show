@@ -2,28 +2,18 @@
 using DiceShow.Ops.Rolling;
 using DiceShow.Ops.Parsing;
 
-namespace DiceShow.Ops
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            do
-            {
+namespace DiceShow.Ops {
+    public class Program {
+        public static void Main(string[] args) {
+            do {
                 Console.Write("DiceShow> ");
                 var rawInput = Console.ReadLine();
-                if (String.IsNullOrWhiteSpace(rawInput) || rawInput.ToLower() == "help")
-                {
+                if (String.IsNullOrWhiteSpace(rawInput) || rawInput.ToLower() == "help") {
                     Console.WriteLine("enter a dice statement or 'quit' to exit");
-                }
-                else if (rawInput.ToLower() == "quit" || rawInput.ToLower() == "exit")
-                {
+                } else if (rawInput.ToLower() == "quit" || rawInput.ToLower() == "exit") {
                     break;
-                }
-                else
-                {
-                    try
-                    {
+                } else {
+                    try {
                         var parser = new Parser();
                         var parsed = parser.Parse(rawInput);
 
@@ -40,17 +30,13 @@ namespace DiceShow.Ops
                         Console.WriteLine($"Exception -- {executed.Exception}");
                         Console.WriteLine($"Results -- {executed.Result}");
 
-                    }
-                    catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(ex.ToString());
                         Console.ResetColor();
                     }
                 }
             } while (true);
-
-
         }
     }
 }

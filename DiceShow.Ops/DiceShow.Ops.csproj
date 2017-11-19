@@ -10,6 +10,6 @@
     <ProjectReference Include="..\DiceShow.Model\DiceShow.Model.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Antlr4" Version="4.5.4-beta001"/>
+    <PackageReference Include="Antlr4" Version="4.6.4"/>
   </ItemGroup>
 </Project>
