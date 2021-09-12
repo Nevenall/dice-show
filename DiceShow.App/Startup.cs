@@ -28,7 +28,7 @@ namespace DiceShow.App {
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logFactory) {
-            if (env.IsDevelopment()) {
+            if(env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 // in dev mode serve all files including .scss
                 app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
@@ -44,7 +44,7 @@ namespace DiceShow.App {
 
         public IServiceProvider ConfigureServices(IServiceCollection services) {
             services.AddSignalR(options => {
-                if (Environment.IsDevelopment()) {
+                if(Environment.IsDevelopment()) {
                     options.Hubs.EnableDetailedErrors = true;
                 }
             });
@@ -57,7 +57,7 @@ namespace DiceShow.App {
             cb.RegisterType<RandomRoller>().As<IRoller>();
             cb.RegisterType<Parser>().As<IParser>();
 
-            if (Environment.IsDevelopment()) {
+            if(Environment.IsDevelopment()) {
                 cb.Register<InMemoryRepository>(c => new InMemoryRepository("InMemoryRepository")).As<IRepository>();
             } else {
                 // cb.Register<DocumentDbRepository>(c=> new DocumentDbRepository("connectionString","databaseName")).As<IRepository>();
